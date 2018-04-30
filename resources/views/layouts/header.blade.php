@@ -108,7 +108,7 @@
     </div>
 
     <div class="container">
-        @include('widgets.footer')
+        @include('layouts.footer')
     </div>
 </div>
 

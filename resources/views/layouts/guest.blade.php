@@ -68,7 +68,7 @@
     </div>
 
 
-    @include('widgets.footer')
+    @include('layouts.footer')
 </div>
 
 
