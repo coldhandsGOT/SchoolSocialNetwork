@@ -22,7 +22,7 @@
     <link href="{{ asset('plugins/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/around.css') }}" rel="stylesheet">
 
-    @yield('header')
+
 </head>
 <body>
 <div id="app">
