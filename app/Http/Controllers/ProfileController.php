@@ -189,7 +189,7 @@ class ProfileController extends Controller
             $file_name = md5(uniqid() . time()) . '.' . $file->getClientOriginalExtension();
             if ($file->storeAs('public/covers', $file_name)){
                 $response['code'] = 200;
-                $this->user->cover_pic = $file_name;
+                $this->user->cover_path = $file_name;
                 $this->user->save();
                 $response['image'] = $this->user->getCover();
             }else{

@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'username', 'password',
+        'name', 'lastname', 'email', 'username', 'password',
     ];
 
     /**
@@ -54,8 +54,8 @@ class User extends Authenticatable
     }
 
    public function getPhoto($w = null, $h = null){
-        if (!empty($this->profile_path)){
-            $path = 'storage/app/public/uploads/profile_photos/'.$this->profile_path;
+        if (empty($this->profile_path)){
+            $path = 'storage/profile_photos/'.$this->profile_pic;
         }else {
             $path = "images/profile-picture.png";
         }
@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function getCover($w = null, $h = null){
         if (!empty($this->cover_path)){
-            $path = 'storage/uploads/covers/'.$this->cover_path;
+            $path = 'storage/covers/'.$this->cover_path;
         }else {
             return "";
         }
@@ -88,7 +88,7 @@ class User extends Authenticatable
     }
 
 
-    
+
     public function getSex(){
         if ($this->sex == 0) return "Male";
         return "Female";
