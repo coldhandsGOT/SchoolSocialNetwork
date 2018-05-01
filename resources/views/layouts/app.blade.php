@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
     <link href="{{ asset('plugins/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/around.css') }}" rel="stylesheet">
 
-
+    @yield('header')
 </head>
 <body>
 <div id="app">
@@ -70,14 +70,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle parent" data-toggle="dropdown" role="button" aria-expanded="false">
 
-                            <img src="{{ Auth::user()->getPhoto() }}" alt="" />
+                            <img src="#" alt="" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <a href="{{ url('/'.Auth::user()->username) }}">
-                                    <i class="fa fa-user"></i> Mon Profile
+                                    <i class="fa fa-user"></i> My Profile
                                 </a>
                             </li>
                             <li>
@@ -111,8 +111,6 @@
         @include('layouts.footer')
     </div>
 </div>
-
-
 <div class="loading-page">
     <img src="{{ asset('images/rolling.gif') }}" alt="">
 </div>

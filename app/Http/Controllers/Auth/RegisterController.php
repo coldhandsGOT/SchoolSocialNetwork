@@ -1,3 +1,12 @@
+/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 <?php
 
 namespace App\Http\Controllers\Auth;
@@ -27,8 +36,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home';  //rediriger le user vers home après qu'il s'enregistre
 
+  
     /**
      * Create a new controller instance.
      *
@@ -40,7 +50,8 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     *   
+     * getteur du validateur pour la requete d'enregistrement
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
@@ -49,13 +60,14 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+          //  'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * création d'une nouvelle instance user après un enregistrement
      *
      * @param  array  $data
      * @return \App\User
@@ -64,6 +76,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+           // 'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

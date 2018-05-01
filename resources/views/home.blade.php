@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 
 
@@ -7,15 +7,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-               @include('widgets.sidebar')
+               @include('widgets.sidebar')  <!-- menu de la page d'acueil -->
             </div>
-            <div class="col-xs-12 col-md-3 pull-right">
-                <div class="hidden-sm hidden-xs">
-                   
-                </div>
-            </div>
+            
             <div class="col-md-6">
-                @include('widgets.wall')
+                @include('widgets.wall')  <!-- mur de la page d'acueil -->
             </div>
         </div>
     </div>

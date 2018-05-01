@@ -6,12 +6,7 @@
                 Home
             </a>
         </li>
-        <li class="list-group-item">
-            <a href="{{ url('/nearby') }}" class="menu-nearby">
-                <i class="fa fa-map-marker"></i>
-                Gens autour de moi
-            </a>
-        </li>
+        
         <li class="list-group-item">
             <a href="{{ url('/groups') }}" class="menu-groups">
                 <i class="fa fa-users"></i>
