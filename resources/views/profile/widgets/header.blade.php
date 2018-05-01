@@ -25,7 +25,7 @@
                         </a>
                     </div>
                     <div class="profile-text">
-                        <h2>{{ $user->name }}</h2>
+                        <h2>{{ $user->name }}  {{ $user->lastname }}</h2>
                         <h4>{{ '@'.$user->username }}</h4>
                        
                     </div>

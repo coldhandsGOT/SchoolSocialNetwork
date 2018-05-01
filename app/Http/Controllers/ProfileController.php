@@ -58,9 +58,9 @@ class ProfileController extends Controller
 
         $can_see = ($my_profile)?true:$user->canSeeProfile(Auth::id());
 
+       
 
-
-        return view('profile.profile', compact('user', 'my_profile', 'wall', 'can_see', 'hobbies', 'relationship', 'relationship2'));
+        return view('profile.profile', compact('user', 'my_profile', 'wall', 'can_see'));
     }
 
     public function following(Request $request, $username){
@@ -105,16 +105,12 @@ class ProfileController extends Controller
 
         $data['map_info'] = json_decode($data['map_info'], true);
 
-
-
         $validator = Validator::make($data, [
             'sex' => 'in:0,1',
             'birthday' => 'date',
             'phone' => 'max:20',
             'bio' => 'max:140',
         ]);
-
-
 
         if ($validator->fails()) {
             $response['code'] = 400;
@@ -126,76 +122,13 @@ class ProfileController extends Controller
             $user->phone = $data['phone'];
             $user->bio = $data['bio'];
             $save = $user->save();
-            if ($save){
-
-                $response['code'] = 200;
-
-                if (count($data['map_info']) > 1) {
-                    $find_country = Country::where('shortname', $data['map_info']['country']['short_name'])->first();
-                    $country_id = 0;
-                    if ($find_country) {
-                        $country_id = $find_country->id;
-                    } else {
-                        $country = new Country();
-                        $country->name = $data['map_info']['country']['name'];
-                        $country->shortname = $data['map_info']['country']['short_name'];
-                        if ($country->save()) {
-                            $country_id = $country->id;
-                        }
-                    }
-
-                    $city_id = 0;
-                    if ($country_id > 0) {
-                        $find_city = City::where('name', $data['map_info']['city']['name'])->where('country_id', $country_id)->first();
-                        if ($find_city) {
-                            $city_id = $find_city->id;
-                        } else {
-                            $city = new City();
-                            $city->name = $data['map_info']['city']['name'];
-                            $city->zip = $data['map_info']['city']['zip'];
-                            $city->country_id = $country_id;
-                            if ($city->save()) {
-                                $city_id = $city->id;
-                            }
-                        }
-                    }
-
-
-                    if ($country_id > 0 && $city_id > 0) {
-
-                        $find_location = UserLocation::where('user_id', $user->id)->first();
-
-
-                        if (!$find_location) {
-
-
-                            $find_location = new UserLocation();
-                            $find_location->user_id = $user->id;
-
-
-                        }
-
-
-                        $find_location->city_id = $city_id;
-                        $find_location->latitud = $data['map_info']['latitude'];
-                        $find_location->longitud = $data['map_info']['longitude'];
-                        $find_location->address = $data['map_info']['address'];
-
-                        $find_location->save();
-
-                    }
-                }
-
-            }
-
         }
-
 
         return Response::json($response);
     }
 
 
-    public function uploadProfilePhoto(Request $request, $username){
+  public function uploadProfilePhoto(Request $request, $username){
 
         $response = array();
         $response['code'] = 400;
@@ -217,9 +150,9 @@ class ProfileController extends Controller
             $file = $request->file('image');
 
             $file_name = md5(uniqid() . time()) . '.' . $file->getClientOriginalExtension();
-            if ($file->storeAs('public/uploads/profile_photos', $file_name)){
+            if ($file->storeAs('public/profile_photos', $file_name)){
                 $response['code'] = 200;
-                $this->user->profile_path = $file_name;
+                $this->user->profile_pic = $file_name;
                 $this->user->save();
                 $response['image_big'] = $this->user->getPhoto();
                 $response['image_thumb'] = $this->user->getPhoto(200, 200);
@@ -254,9 +187,9 @@ class ProfileController extends Controller
             $file = $request->file('image');
 
             $file_name = md5(uniqid() . time()) . '.' . $file->getClientOriginalExtension();
-            if ($file->storeAs('public/uploads/covers', $file_name)){
+            if ($file->storeAs('public/covers', $file_name)){
                 $response['code'] = 200;
-                $this->user->cover_path = $file_name;
+                $this->user->cover_pic = $file_name;
                 $this->user->save();
                 $response['image'] = $this->user->getCover();
             }else{

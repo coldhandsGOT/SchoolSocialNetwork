@@ -53,9 +53,9 @@ class User extends Authenticatable
         return false;
     }
 
-    public function getPhoto($w = null, $h = null){
+   public function getPhoto($w = null, $h = null){
         if (!empty($this->profile_path)){
-            $path = 'storage/uploads/profile_photos/'.$this->profile_path;
+            $path = 'storage/app/public/uploads/profile_photos/'.$this->profile_path;
         }else {
             $path = "images/profile-picture.png";
         }
@@ -87,6 +87,8 @@ class User extends Authenticatable
         return url($image);
     }
 
+
+    
     public function getSex(){
         if ($this->sex == 0) return "Male";
         return "Female";
