@@ -54,14 +54,6 @@ Route::get('/followers/pending', 'FollowController@pending');
 Route::post('/follower/request', 'FollowController@followerRequest');
 Route::post('/follower/denied', 'FollowController@followDenied');
 
-// Relatives
-Route::get('/relatives/pending', 'RelativesController@pending');
-Route::post('/relative/delete', 'RelativesController@delete');
-Route::post('/relative/request', 'RelativesController@relativeRequest');
-
-
-// Nearby
-Route::get('/nearby', 'NearbyController@index');
 
 // Messages
 Route::get('/direct-messages', 'MessagesController@index');
@@ -73,11 +65,6 @@ Route::post('/direct-messages/people-list', 'MessagesController@peopleList');
 Route::post('/direct-messages/delete-chat', 'MessagesController@deleteChat');
 Route::post('/direct-messages/delete-message', 'MessagesController@deleteMessage');
 Route::post('/direct-messages/notifications', 'MessagesController@notifications');
-
-// Find Location
-Route::get('/find-my-location', 'FindLocationController@index');
-Route::get('/save-my-location', 'FindLocationController@save');
-Route::get('/save-my-location2', 'FindLocationController@save2');
 
 // Profile
 Route::get('/{username}', 'ProfileController@index');
