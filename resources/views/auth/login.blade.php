@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group{{ old('tab') != 'register' && $errors->has('password') ? ' has-error' : '' }} col-md-12">
-            <label for="password" class="control-label">Password</label>
+            <label for="password" class="control-label">Votre mot de passe</label>
 
             <div  class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt"></i> </span>
@@ -72,8 +72,8 @@
 
         <div class="form-group">
             <div class="col-md-8 col-md-offset-2">
-                <button type="submit" class="btn btn-primary btn-facebook">
-                    <i class="fa fa-facebook-square"></i> Se connecter avec Facebook
+                <button type="submit" class="btn btn-primary btn-facebook"> <i class="fa fa-facebook-square"></i> 
+                    Se connecter avec Facebook
                 </button>
             </div>
         </div>

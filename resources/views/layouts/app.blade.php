@@ -106,9 +106,7 @@
         @yield('content')
     </div>
 
-    <div class="container">
-        @include('layouts.footer')
-    </div>
+    
 </div>
 <div class="loading-page">
     <img src="{{ asset('images/rolling.gif') }}" alt="">
@@ -134,7 +132,21 @@
 <script src="{{ asset('js/around.js') }}"></script>
 <script src="{{ asset('js/wall.js') }}"></script>
 <script src="{{ asset('js/notifications.js') }}"></script>
-@yield('footer')
 
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>  <!-- place holders -->
 </body>
+
+
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        @include('layouts.footer')
+    </div>
+</footer>
+
 </html>
