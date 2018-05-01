@@ -5,28 +5,11 @@
     <h2>Rejoigner le réseau social de l'ECE</h2>
 
     <div class="row">
-        <div class="form-group{{ old('tab') == 'register' && $errors->has('name') ? ' has-error' : '' }} col-md-12">
-            <label for="name" class="control-label">Nom</label>
 
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle-o"></i> </span>
-
-                    <input id="name" type="text" placeholder="Nom" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                </div>
-
-                @if (old('tab') == 'register' && $errors->has('name'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('name') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
 
 
 		 <div class="form-group{{ old('tab') == 'register' && $errors->has('lastname') ? ' has-error' : '' }} col-md-12">
-            <label for="lastname" class="control-label">nom de famille</label>
+            <label for="lastname" class="control-label">Nom</label>
 
             <div class="form-group">
                 <div class="input-group">
@@ -45,6 +28,27 @@
         </div>
 
 
+        <div class="form-group{{ old('tab') == 'register' && $errors->has('name') ? ' has-error' : '' }} col-md-12">
+            <label for="name" class="control-label">Prenom</label>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle-o"></i> </span>
+
+                    <input id="name" type="text" placeholder="Nom" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                </div>
+
+                @if (old('tab') == 'register' && $errors->has('name'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+
+
+
         <div class="form-group{{ old('tab') == 'register' && $errors->has('email') ? ' has-error' : '' }} col-md-12">
             <label for="email" class="control-label">Votre adresse E-Mail</label>
 
@@ -61,12 +65,12 @@
                 </span>
                 @endif
             </div>
-
-
         </div>
 
+
+
         <div class="form-group{{ old('tab') == 'register' && $errors->has('username') ? ' has-error' : '' }} col-md-12">
-            <label for="username" class="control-label">Username</label>
+            <label for="username" class="control-label">Nom d'utilisateur</label>
 
             <div class="form-group">
                 <div class="input-group">
@@ -86,13 +90,13 @@
         </div>
 
         <div class="form-group{{ old('tab') == 'register' && $errors->has('password') ? ' has-error' : '' }} col-md-12">
-            <label for="password" class="control-label">Password</label>
+            <label for="password" class="control-label">Mot de passe</label>
 
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt"></i> </span>
 
-                    <input id="password" type="password" placeholder="********" class="form-control" name="password" required>
+                    <input id="password" type="password" placeholder="********************" class="form-control" name="password" required>
 
                 </div>
                 @if (old('tab') == 'register' && $errors->has('password'))
@@ -104,22 +108,20 @@
         </div>
 
         <div class="form-group  col-md-12">
-            <label for="password-confirm" class="control-label">Confirm Password</label>
+            <label for="password-confirm" class="control-label">Confirmer le mot de passe</label>
 
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt"></i> </span>
 
-                    <input id="password-confirm" type="password" placeholder="********" class="form-control" name="password_confirmation" required>
+                    <input id="password-confirm" type="password" placeholder="********************" class="form-control" name="password_confirmation" required>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-8 col-md-offset-2">
-                <button type="submit" class="btn btn-primary btn-register">
-                    Register
-                </button>
+                <button type="submit" class="btn btn-primary btn-register"> Enregistrer  </button>
             </div>
         </div>
     </div>
