@@ -43,9 +43,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 		]);
 
+
+    Route::get('/conversations', 'ConversationsController@index')->name('conversations');
+    Route::get('/conversations/{id}', 'ConversationsController@index')->name('conversations.show');
+
 	
 
 });
-
-
-
