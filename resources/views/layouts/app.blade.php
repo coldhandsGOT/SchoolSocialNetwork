@@ -39,7 +39,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.png') }}" alt="" />
+                    <img style ="margin-left:-120px" src="{{ asset('images/logo.png') }}" alt="" />
                 </a>
             </div>
 
@@ -65,6 +65,8 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+
+
                     @include('widgets.notifications')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle parent" data-toggle="dropdown" role="button" aria-expanded="false">
