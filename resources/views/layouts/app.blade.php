@@ -38,7 +38,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="" />
                 </a>
             </div>
