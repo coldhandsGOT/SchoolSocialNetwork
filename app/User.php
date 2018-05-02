@@ -33,4 +33,56 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\profile');
     }
+
+    public function getPhoto($w = null, $h = null){
+        if (!empty($this->profile_path)){
+            $path = 'storage/uploads/profile_photos/'.$this->avatar;
+        }else {
+            $path = "images/profile-picture.png";
+        }
+        if ($w == null && $h == null){
+            return url('/'.$path);
+        }
+        $image = '/resizer.php?';
+        if ($w > -1) $image .= '&w='.$w;
+        if ($h > -1) $image .= '&h='.$h;
+        $image .= '&zc=1';
+        $image .= '&src='.$path;
+        return url($image);
+    }
+
+    public function getCover($w = null, $h = null){
+        if (!empty($this->cover_path)){
+            $path = 'storage/uploads/covers/'.$this->cover_path;
+        }else {
+            return "";
+        }
+        if ($w == null && $h == null){
+            return url('/'.$path);
+        }
+        $image = '/resizer.php?';
+        if ($w > -1) $image .= '&w='.$w;
+        if ($h > -1) $image .= '&h='.$h;
+        $image .= '&zc=1';
+        $image .= '&src='.$path;
+        return url($image);
+    }
+    
+    public function getSex(){
+        if ($this->sex == 0) return "Male";
+        return "Female";
+    }
+
+    public function getPhone(){
+        return $this->phone;
+    }
+
+    public function getAge(){
+        if ($this->birthday) return date('Y') - $this->birthday->format('Y');
+    }
+
+
+
+
+
 }

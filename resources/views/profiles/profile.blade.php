@@ -3,63 +3,33 @@
 
 @section('content')
 
-<div class="container">
-	<div class="col-lg-4">
+    <div class="profile">
 
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<p class="text-center">	{{$user->name}} {{$user->lastname}} </p>
-			</div> 
-
-			<div class="panel-body">
-				<center>
-				<img src="{{ Storage::url($user->avatar) }}" width="170px" height="170" style="border-radius: 50%;" alt="">
-				</center>
-				<br>
-
-			
-
-				<p class="text-center">
-					{{$user->profile->location}} 
-				</p> 
-
-				<br>
-
-				<p class="text-center">
-					@if(Auth::id()==$user->id)  <!-- edition sur son profile permise que par la personne loggué avec le même profile -->
-				<a href="{{ route('profile.edit') }}" class="btn btn-lg btn-info">Edit profile </a>
-					@endif
-				</p> 
-		    </div>
-		</div>
+        @include('profiles.widgets.header')
 
 
 
 
-		<div class="panel panel-default">
-			<div class="body">
-				<friend :profile_id="{{ $user->id}}">  </friend>
-			</div>
-		</div>
- 
+       
+            <div class="container profile-main">
+                <div class="row">
+                    <div class="col-xs-12">
+                        
+                            <div class="alert alert-success"><i class="fa fa-check" aria-hidden="true"></i> <strong>{!! session('alert-success') !!}</strong></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @include('profiles.widgets.information')
+                    </div>
+                   
+                    <div class="col-md-6">
+                        @include('widgets.wall')
+                    </div>
+                </div>
+            </div>
+       
+    </div>
 
-
-
-
-		<div class="panel panel-default">
-			<div class="panel-heading" >
-				<p class="text-center"> about me </p>
-			</div> 
-
-			<div class="panel-body">
-				<p class="text-center"> {{ $user->profile->about }}  </p>
-			</div> 
-			
-		</div>
-
-		
-	</div>
-</div>
 
 @endsection
