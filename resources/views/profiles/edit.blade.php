@@ -18,7 +18,8 @@
                        
                         <div class="form-group">
                             <label for="birthday">Birthday</label>
-                              
+                            <input type="date" class="form-control datepicker" name="birthday" value="{{ $information->birthday}}">
+                                
                         </div>
                         
 

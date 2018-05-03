@@ -27,12 +27,13 @@ class profilescontroller extends Controller
    	
 
    	$this->validate($r, [
+         'birthday'=>'date',
    		'location' => 'max:255',
    		'bio' => 'max:255',
    		'phone' => 'max:255',
    		]);
    	Auth::user()->profile()->update([
-
+         'birthday'=> $r->birthday,
    		'location'=> $r->location,
    		'bio'=>$r->bio,
    		'phone'=>$r->phone,
