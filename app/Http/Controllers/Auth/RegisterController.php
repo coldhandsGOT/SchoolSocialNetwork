@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Profile;
 use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -24,7 +24,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect users after registration.
      *
      * @var string
      */
@@ -49,11 +49,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'gender' =>'required|boolean',
             'name' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'gender' =>'required|boolean',
             'password' => 'required|string|min:6|confirmed',
+
         ]);
     }
 
@@ -61,19 +62,16 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return User
+     * @return \App\User
      */
     protected function create(array $data)
     {
-       if($data['gender'])
-        {
-            $avatar = 'public/defaults/avatars/male.jpg';
-        }
-        else
-        {
-            $avatar = 'public/defaults/avatars/female.png';
-        }
-        $user =  User::create([
+        if($data['gender'])
+            $avatar ='public/default/avatars/female.png';
+         else
+            $avatar ='public/default/avatars/male.png';
+
+        $user= User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'avatar' => $avatar,

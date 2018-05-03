@@ -11,23 +11,22 @@
 |
 */
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
-    $name = $faker->name;
+$name = $faker->name;
+$lastname = $faker->lastname;
+$fullname=$name +" "+$lastname;
+
+
     return [
-        'name' => $name,
+        'name' => $faker->name,
+        'lastname'=> $faker->lastname,
         'email' => $faker->unique()->safeEmail,
-        'slug' => str_slug($name),
-        'gender' => 0,
-        'avatar' =>  'public/defaults/avatars/female.png',
+        'slug'=> str_slug($fullname),
+		'gender'=> 0,
+		'avatar' => 'public/default/avatars/female.png',
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
-    ];
-});
-
-$factory->define(App\Profile::class, function (Faker\Generator $faker) {
-    return [
-        'location' => $faker->city,
-        'about' => $faker->paragraph(4)
     ];
 });

@@ -9,36 +9,39 @@ use App\User;
 
 class profilescontroller extends Controller
 {
-   public function index($slug) //lien dynamique selon profile/prenom-nom
+   public function index($slug) //lien dynamique selon profile/nom-prenom
    {
     $user= User::where('slug',$slug)->first();
    	return view('profiles.profile')
    	->with('user',$user);
    }
 
-   public function edit()	//affichage des infos existantes dans la page edit
+   public function edit()	//edition des informations du user
    {
    	return view('profiles.edit')->with('information', Auth::user()->profile);
+
    }
 
-   public function update(request $r)//edition des informations du user
+   public function update(request $r)
    {
+   	
+
    	$this->validate($r, [
+         'birthday'=>'date',
    		'location' => 'max:255',
-   		'about' => 'max:255',
-   		'phone' => 'max:20',
+   		'bio' => 'max:255',
+   		'phone' => 'max:255',
    		]);
    	Auth::user()->profile()->update([
-
+         'birthday'=> $r->birthday,
    		'location'=> $r->location,
-   		'about'=>$r->about,
+   		'bio'=>$r->bio,
    		'phone'=>$r->phone,
    		]);
-
-   	if($r->hasFile('profile_pic'))
+   	if($r->hasFile('avatar'))
    	{
    		Auth::user()->update([
-   				'profile_pic' => $r->profile_pic->store('public/profile_pic'),
+   				'avatar' => $r-> avatar->store('public/avatars'),
    			]);
    	}
 

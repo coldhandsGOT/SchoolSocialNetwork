@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->string('avatar');
-            $table->string('slug');
-            $table->boolean('gender');
+            $table ->string('avatar');
+            $table ->string('slug');
+            $table -> boolean('gender');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::dropIfExists('users');
     }
 }
