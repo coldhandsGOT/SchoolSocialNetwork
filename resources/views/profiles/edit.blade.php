@@ -38,7 +38,7 @@
                             <label for="bio"> résumé </label>
                             <textarea name ="bio" id="bio"  cols="40" rows ="9" class="form-control" >{{ $information->bio}}</textarea>
                         </div>
-<!-- Scripts -->
+
  
 
 
