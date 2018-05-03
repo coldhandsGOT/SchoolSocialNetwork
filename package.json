@@ -21,6 +21,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "noty": "^3.2.0-beta",
-    "vue-resource": "^1.5.0"
+    "vue-resource": "^1.5.0",
+    "vuejs-noty": "^0.1.3"
   }
 }

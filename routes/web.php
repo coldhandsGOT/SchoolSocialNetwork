@@ -70,7 +70,7 @@ Route::group(['middleware' => 'auth'], function()
 		'as' => 'profile.edit',
 
 		]);
-});
+
 
 Route::get('/conversations', 'ConversationsController@index')->name('conversations');
 Route::get('/conversations/{user}', 'ConversationsController@show')
@@ -78,3 +78,6 @@ Route::get('/conversations/{user}', 'ConversationsController@show')
 		->name('conversations.show');
 Route::post('/conversations/{user}', 'ConversationsController@store');
 		//  ->middleware('can:talkTo,user')
+
+});
+

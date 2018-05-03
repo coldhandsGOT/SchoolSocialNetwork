@@ -38,17 +38,9 @@
                             <label for="bio"> résumé </label>
                             <textarea name ="bio" id="bio"  cols="40" rows ="9" class="form-control" >{{ $information->bio}}</textarea>
                         </div>
-<!-- Scripts -->
+
  
-    <script>        
-       
-           new noty({
-                type: 'success',
-                layout: 'top',
-                text: '{{ Session::get('success') }}'
-            });
-       
-    </script>
+
 
                         <div class="form-group">
                             <p class="text-center">
