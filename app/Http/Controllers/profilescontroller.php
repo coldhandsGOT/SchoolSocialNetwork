@@ -27,10 +27,10 @@ class profilescontroller extends Controller
    	
 
    	$this->validate($r, [
-         'birthday'=> 'date',
-   		'location' => 'max:255',
-   		'bio' => 'max:255',
-   		'phone' => 'max:255',
+         
+   		'location' =>'max:255',
+   		'bio' =>'max:255',
+   		'phone' =>'max:255',
    		]);
       
    	Auth::user()->profile()->update([
@@ -42,7 +42,7 @@ class profilescontroller extends Controller
    	if($r->hasFile('avatar'))
    	{
    		Auth::user()->update([
-   				'avatar' => $r-> avatar->store('public/avatars'),
+   				'avatar' => $r->avatar->store('public/avatars'),
    			]);
    	}
 
