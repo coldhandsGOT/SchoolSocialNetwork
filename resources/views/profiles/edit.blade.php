@@ -1,7 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -29,10 +26,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="about"> about </label>
-                            <textarea name ="about" id="about"  cols="30" rows ="10" class="form-control" >{{ $information->about}}</textarea>
+                            <label for="bio"> bio </label>
+                            <textarea name ="bio" id="bio"  cols="30" rows ="10" class="form-control" >
+                                {{ $information->bio}}
+                            </textarea>
                         </div>
-
+<!-- Scripts -->
+ 
+    <script>        
+       
+           new noty({
+                type: 'success',
+                layout: 'top',
+                text: '{{ Session::get('success') }}'
+            });
+       
+    </script>
 
                         <div class="form-group">
                             <p class="text-center">
@@ -47,5 +56,6 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+
+

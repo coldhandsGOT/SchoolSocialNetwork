@@ -1,38 +1,52 @@
 <?php
 
+Route::post('/{slug}/save/information', 'profilescontroller@update');
+
+	Route::post('/{slug}/save/information', [
+		'uses'=>'profilescontroller@update',
+		'as' => 'profile.update',
+		]);
+
 
 Route::get('/', function () {
-    return view('layouts.guest');
+    return view('welcome');
 });
 
 
+Route::get('/check_relationship_status/{id}', function ($id) {
+    return \App\User::find($id);
+});
 
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+//renvoi le user sur sa  page de réglages
+	Route::get('/settings', function() {
 
-Route::group(['middleware' => 'auth'], function(){
+		 return view('settings');
+		});
 
+
+//route groupe for authenticated users
+Route::group(['middleware' => 'auth'], function()
+{
+	
 	Route::get('/profile/{slug}',[
 		'uses' => 'profilescontroller@index',
 		'as' => 'profile',
 		]);
 
+	//edition du profile pour la personne auth sur son profile
+	Route::get('/profile/edit/profile',[
+		'uses' => 'profilescontroller@edit',
+		'as' => 'profile.edit',
+
+		]);
 
 
-//edition du profile pour la personne auth sur son profile
-	Route::get('/settings', function() {
 
-		 return view('settings');
-		});
-		
-
-	
-
-	
 
 	//submit information
 	Route::post('/profile/update/profile',[
@@ -41,13 +55,6 @@ Route::group(['middleware' => 'auth'], function(){
 
 		]);
 
-
-//edition du profile pour la personne auth sur son profile
-	Route::get('/profile/edit/profile',[
-		'uses' => 'profilescontroller@edit',
-		'as' => 'profile.edit',
-
-		]);
 
 	
 
