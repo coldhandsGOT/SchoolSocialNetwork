@@ -79,56 +79,7 @@
 <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="modal-title">Vos informations</h5>
-            </div>
-
-            <div class="modal-body">
-                <form id="form-profile-information">
-                   
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Gender</label>
-                                <select class="form-control " name="gender">
-                                    <option value="0" @if($user->gender == 1){{ 'selected' }}@endif>Male</option>
-                                    <option value="1" @if($user->gender == 0){{ 'selected' }}@endif>Female</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Birthday</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-birthday-cake"></i></span>
-                                    <input type="text" class="form-control datepicker" name="birthday" value="@if($user->profile->birthday){{ $user->birthday->format('Y-m-d') }}@endif" aria-describedby="basic-addon1" data-date-format="yyyy-mm-dd">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Phone:</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-mobile"></i></span>
-                                    <input type="text" class="form-control" name="phone" value="{{ $user->profile->phone }}" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Bio</label>
-                        <textarea name="bio" class="form-control">{{ $user->profile->bio}}</textarea>
-                    </div>
-                </form>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="saveInformation()">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+           
         </div>
     </div>
 </div>
