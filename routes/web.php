@@ -21,12 +21,18 @@ Route::group(['middleware' => 'auth'], function(){
 		'as' => 'profile',
 		]);
 
-	//edition du profile pour la personne auth sur son profile
-	Route::get('/profile/edit/profile',[
-		'uses' => 'profilescontroller@edit',
-		'as' => 'profile.edit',
 
-		]);
+
+//edition du profile pour la personne auth sur son profile
+	Route::get('/settings', function() {
+
+		 return view('settings');
+		});
+		
+
+	
+
+	
 
 	//submit information
 	Route::post('/profile/update/profile',[

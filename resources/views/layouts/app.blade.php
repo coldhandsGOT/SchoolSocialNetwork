@@ -38,7 +38,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="" />
                 </a>
             </div>
@@ -76,7 +76,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <a href="{{ route('profile', ['slug' => Auth::user()->slug]) }}">
-                                    <i class="fa fa-user"></i> My Profile
+                                    <i class="fa fa-user"></i> Mon profile
                                 </a>
                             </li>
                             <li>
