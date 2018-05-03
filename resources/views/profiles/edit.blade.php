@@ -1,8 +1,9 @@
-
+ <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit your profile</div>
+                <br>
+                <div class="panel-heading">Modifier vos informations</div>
 
                 <div class="panel-body">
                     <form action="{{ route('profile.update')}}" method="post" enctype="multipart/form-data">
@@ -16,7 +17,7 @@
 
 
                         <div class="form-group">
-                            <label for="location"> location </label>
+                            <label for="location"> localisation </label>
                             <input type="text" name ="location" value="{{ $information->location}}" class="form-control">
                         </div>
 
@@ -26,10 +27,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="bio"> bio </label>
-                            <textarea name ="bio" id="bio"  cols="30" rows ="10" class="form-control" >
-                                {{ $information->bio}}
-                            </textarea>
+                            <label for="bio"> résumé </label>
+                            <textarea name ="bio" id="bio"  cols="40" rows ="9" class="form-control" >{{ $information->bio}}</textarea>
                         </div>
 <!-- Scripts -->
  
