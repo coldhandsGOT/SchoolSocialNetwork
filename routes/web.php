@@ -28,11 +28,11 @@ Route::group(['middleware' => 'auth'], function(){
 
 		 return view('settings');
 		});
-		
 
-	
 
-	
+
+
+
 
 	//submit information
 	Route::post('/profile/update/profile',[
@@ -49,9 +49,14 @@ Route::group(['middleware' => 'auth'], function(){
 
 		]);
 
-	
+    Route::get('/conversations', 'ConversationsController@index')->name('conversations');
+  Route::get('/conversations/{user}', 'ConversationsController@show')
+      //  ->middleware('can:talkTo,user')
+        ->name('conversations.show');
+  Route::post('/conversations/{user}', 'ConversationsController@store')
+        //  ->middleware('can:talkTo,user')
+        ;
+
+
 
 });
-
-
-
