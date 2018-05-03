@@ -49,8 +49,8 @@
         
         		 <i class="fa fa-birthday-cake"></i>
 					{{$user->profile->birthday}} 
-		
 		</li>
+        
         <li class="list-group-item">
         	
         		 <i class="fa fa-map-marker"></i>

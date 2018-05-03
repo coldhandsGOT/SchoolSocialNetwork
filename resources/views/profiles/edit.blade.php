@@ -15,6 +15,13 @@
                         </div>
 
 
+                       
+                        <div class="form-group">
+                            <label for="birthday">Birthday</label>
+                              
+                        </div>
+                        
+
 
                         <div class="form-group">
                             <label for="location"> localisation </label>
