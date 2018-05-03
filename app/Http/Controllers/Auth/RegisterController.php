@@ -67,9 +67,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if($data['gender'])
-            $avatar ='public/default/avatars/female.png';
-         else
             $avatar ='public/default/avatars/male.png';
+         else
+            $avatar ='public/default/avatars/female.png';
 
         $user= User::create([
             'name' => $data['name'],

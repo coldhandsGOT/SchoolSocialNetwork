@@ -4,11 +4,12 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import VueResource from 'vue-resource';
-require('./bootstrap');
-const Vue = require('vue');
 
-Vue.use(VueResource)
+require('./bootstrap');
+
+import Vue from 'vue'
+import VueNoty from 'vuejs-noty'
+Vue.use(VueNoty)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
