@@ -12,6 +12,8 @@ return [
     | any other location as required by the application or its packages.
     */
 
+
+
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -167,7 +169,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-
+        Laracasts\Flash\FlashServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -205,6 +207,7 @@ return [
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
+        'Flash'=> Laravel\FlashMessage\Facades\Flash::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
@@ -228,4 +231,8 @@ return [
 
     ],
 
+
 ];
+
+    
+
