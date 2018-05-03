@@ -5,6 +5,7 @@
                 <br>
                 <div class="panel-heading">Modifier vos informations</div>
 
+
                 <div class="panel-body">
                     <form action="{{ route('profile.update')}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
@@ -39,16 +40,12 @@
                             <textarea name ="bio" id="bio"  cols="40" rows ="9" class="form-control" >{{ $information->bio}}</textarea>
                         </div>
 
- 
-
-
                         <div class="form-group">
                             <p class="text-center">
-                                <button class ="btn btn-primary btn-lg" type="submit">
-                                    save your information
-                                </button>
+                                <button class ="btn btn-primary btn-lg" type="submit">save your information</button>
                             </p>
                         </div>
+
 
                     </form>
                 </div>

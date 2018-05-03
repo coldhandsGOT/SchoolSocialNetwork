@@ -6,6 +6,7 @@
 <div class="container">
 	<div class="col-lg-4">
 
+                    @include('widgets.flashmessage');
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -68,6 +69,7 @@
 		</li>   
 
     </ul>
+
 	</div>
 </div>
 

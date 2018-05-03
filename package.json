@@ -19,6 +19,7 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
+    "gul": "^1.0.0",
     "gulp": "^3.9.1",
     "noty": "^3.2.0-beta",
     "vue-resource": "^1.5.0",

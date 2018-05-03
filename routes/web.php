@@ -73,9 +73,9 @@ Route::group(['middleware' => 'auth'], function()
 
 
 Route::get('/conversations', 'ConversationsController@index')->name('conversations');
-Route::get('/conversations/{user}', 'ConversationsController@show')
+Route::get('/conversations/{user}', 'ConversationsController@show')->name('conversations.show');
 	//  ->middleware('can:talkTo,user')
-		->name('conversations.show');
+		
 Route::post('/conversations/{user}', 'ConversationsController@store');
 		//  ->middleware('can:talkTo,user')
 
