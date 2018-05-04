@@ -3,16 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-          <!-- Retour à la page indiquée avec un intervalle de temps de 5sec-->
-          <meta http-equiv="refresh" content="0;user.php" />
-          <title>Authentification en cours...</title>
+          <!-- redirect to home page-->
+          <meta http-equiv="refresh" content="0;chronologie.php" />
 </head>
-
-<body>
-  <div id="loading">
-    <img src="../images/load.jpg">
-  </div>
-</body>
 </html>
 
 <?php
@@ -42,12 +35,22 @@
 
         //vérifier si l'identification est correcte.
         if ($em == true){
-          echo "Bienvenue à ECE'Raz";
 
           //recuperer les données de l'Users dans la BDD
           $statement_pseudo = $conn -> prepare("SELECT pseudo FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
           $statement_pseudo -> EXECUTE();
           $pseudo = $statement_pseudo -> fetchColumn();
+
+
+           $statement_name = $conn -> prepare("SELECT name FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_name -> EXECUTE();
+          $name = $statement_name -> fetchColumn(0);
+
+
+          $statement_lastname = $conn -> prepare("SELECT lastname FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_lastname -> EXECUTE();
+          $lastname = $statement_lastname -> fetchColumn(0);
+         
 
           $statement_civilite = $conn -> prepare("SELECT civilite FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
           $statement_civilite -> EXECUTE();
@@ -87,16 +90,9 @@
           $_SESSION["Admin"] = $admin;
 
 
-          /*//test si les données sont bien stockées dans la session.
-          echo $_SESSION["pseudo"];
-          echo $_SESSION["photo_profil"];
-          echo $_SESSION["image_fond"];
-          echo $_SESSION["date_naissance"];
-          echo $_SESSION["Admin"];
-          echo $_SESSION["description_user"];
-          echo $_SESSION["civilite"];*/
-
-        } else { //si l'identification est echouée.
+        } 
+        else //si l'identification est echouée.
+        { 
           echo "E-email ou mot de passe incorrect(s)";
         }
       }catch (Exception $e){
