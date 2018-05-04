@@ -5,6 +5,7 @@
 <html>
 
 <?php include 'header.php' ?>
+<?php include 'side_menu.php' ?>
 
    </div>
   <p id="barre0"> </p>

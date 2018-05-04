@@ -8,34 +8,50 @@
 
 
       <div class="menu">
-            <ul class="list-group">
-         <li class="list-group-item">
-            <a href="chronologie.php" class="menu-home">
-                <i class="fa fa-home"></i>
+            <ul class="nav nav-pills nav-stacked">
+         <li role="presentation" class="active">
+            <a href="chronologie.php" >
+                <i class="fa fa-globe"></i>
                 Home
             </a>
         </li>
 
 
-        <li class="list-group-item">
-            <a href="user.php" class="menu-home">
+        <li  role="presentation">
+            <a href="user.php" >
                 <i class="fa fa-home"></i>
                 Profile
             </a>
         </li>
         
-        <li class="list-group-item">
-            <a href="amis.php" class="menu-groups">
+        <li  role="presentation">
+            <a href="amis.php" >
                 <i class="fa fa-users"></i>
                 Amis
             </a>
         </li>
-        <li class="list-group-item">
-            <a href="photo.php" class="menu-dm">
-                <i class="fa fa-commenting"></i>
+        <li  role="presentation">
+            <a href="photo.php">
+                <i class="fa fa-camera"></i>
                 Photo
             </a>
         </li>
+
+            <li  role="presentation">
+            <a href="amis.php" >
+                <i class="fa fa-commenting"></i>
+                Message
+            </a>
+        </li>
+
+           <li  role="presentation">
+            <a href="#" >
+                <i class="fa fa-briefcase"></i>
+                Emploi
+            </a>
+        </li>
+
+
 
     </ul>
 </div>
