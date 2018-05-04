@@ -62,8 +62,7 @@ session_start();
                 <div class="encadrement">
                   <!--***********************On récupère les données des posts*********************** -->
                   <?php
-                  session_start();
-                  //on se connecte a la base
+                  
                   require "connexion_BDD.php";
 
                   try {
