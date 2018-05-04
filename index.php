@@ -152,6 +152,17 @@
                                             </div>
 
 
+                                            <div class="col-md-12">
+                                                    <label for="naissance" class="control-label"> Votre date de naissance</label>
+                                                <div class="form-group">
+                                                     <div class="input-group">
+                                                         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle-o"></i> </span>
+                                                            <input type="date" class="form-control datepicker" name="naissance" onblur="validernaissance()" required>
+                                                    </div>
+                                                * </div>
+                                            </div>
+
+
 
                                             <div class="col-md-12">
                                                 <label for="email" class="control-label">E-Mail Address</label>
@@ -170,7 +181,7 @@
                                                     <div class="form-group">
                                                          <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt"></i> </span>
-                                                                    <input id="password" type="password" class="form-control" placeholder="****************"  name="password" onblur="validerPassword()" required>
+                                                                    <input id="mdp" type="password" class="form-control" placeholder="****************"  name="mdp" onblur="validerPassword()" required>
                                                          </div>
                                                     </div>
                                             </div>

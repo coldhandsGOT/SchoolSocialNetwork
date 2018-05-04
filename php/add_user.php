@@ -54,14 +54,12 @@ try {
       $naissance = strtotime( $_POST['naissance']);
       $naissance = date('Y-m-d',$naissance);
     }
-    if (isset($_POST['description'])){
-      $description = $_POST['description'];
-    }
+  
 
 
     //requete pour insérer les données dans la BDD
-    $sql = "INSERT INTO Users (email, pseudo, mdp, name, lastname,  civilite, date_naissance, description_user)
-    VALUES ('$email', '$pseudo', '$mdp', '$name', '$lastname',  '$civilite', '$naissance', '$description')";
+    $sql = "INSERT INTO Users (email, pseudo, mdp, name, lastname,  civilite, date_naissance)
+    VALUES ('$email', '$pseudo', '$mdp', '$name', '$lastname',  '$civilite', '$naissance')";
     $conn-> exec($sql);
     echo "En cours d'inscription";
 
