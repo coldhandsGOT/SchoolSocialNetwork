@@ -12,13 +12,13 @@
 <?php
 
 try {
-    //on se connecte a la base
+    //connection à la bdd
     require "connexion_BDD.php";
 
-    //test pour récupérer les données du formulaire
-    if (isset($_POST['email'])){
+    //try catch pour l'insertion dans la bdd
+    if (isset($_POST['email']))
+    {
       $email = $_POST['email'];
-      //echo $_POST['email'];
 
       $verif_mail = $conn -> prepare("SELECT email FROM Users WHERE email = '".$_POST['email']."'");
       $verif_mail -> EXECUTE();
@@ -27,34 +27,41 @@ try {
       if ($mail_existant == true) {
         echo "Email existé";
       }
+    }
 
+
+    if (isset($_POST['name'])){
+      $name = $_POST['name'];
     }
-    if (isset($_POST['pseudo'])){
+
+    if (isset($_POST['lastname'])){
+      $lastname = $_POST['lastname'];
+    }
+
+     if (isset($_POST['pseudo'])){
       $pseudo = $_POST['pseudo'];
-      //echo $pseudo;
     }
+
+
+
     if (isset($_POST['mdp'])){
       $mdp = $_POST['mdp'];
-      //echo $mdp;
     }
     if (isset($_POST['civilite'])){
       $civilite = $_POST['civilite'];
-      //echo $civilite;
     }
     if (isset($_POST['naissance'])){
       $naissance = strtotime( $_POST['naissance']);
       $naissance = date('Y-m-d',$naissance);
-      //echo $naissance;
     }
     if (isset($_POST['description'])){
       $description = $_POST['description'];
-      //echo $description;
     }
 
 
     //requete pour insérer les données dans la BDD
-    $sql = "INSERT INTO Users (email, pseudo, mdp, civilite, date_naissance, description_user)
-    VALUES ('$email', '$pseudo', '$mdp', '$civilite', '$naissance', '$description')";
+    $sql = "INSERT INTO Users (email, pseudo, mdp, name, lastname,  civilite, date_naissance, description_user)
+    VALUES ('$email', '$pseudo', '$mdp', '$name', '$lastname',  '$civilite', '$naissance', '$description')";
     $conn-> exec($sql);
     echo "En cours d'inscription";
 
