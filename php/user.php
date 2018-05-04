@@ -25,13 +25,13 @@ session_start();
 
       <div class="panel-body">
         <center>
-        <img src="{{ Storage::url($user->avatar) }}" width="250" height="250" style="border-radius: 4%;" alt="">
+        <img src="../images/users/" width="250" height="250" style="border-radius: 4%;" alt="">
         </center>
         </div>
     </div>
     <div class="panel panel-default">
       <div class="body">
-        <friend :profile_id="{{ $user->id}}">  </friend>
+       <!-- <friend :profile_id="{{ $user->id}}">  </friend>   -->
       </div>
     </div>
  
@@ -40,7 +40,7 @@ session_start();
    <!-- @if(Auth::id()==$user->id)  -->
         <div class="edit-button">
             <div class="button-frame">
-                <a href="profile.edit" data-toggle="modal" data-target="#info">
+                <a href="edit_profile.php" data-toggle="modal" data-target="#info">
                     <i class="fa fa-pencil"></i>
                     Edit
                 </a>
