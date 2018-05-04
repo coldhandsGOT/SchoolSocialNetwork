@@ -46,9 +46,7 @@ session_start();
    </div>
   <p id="barre0"> </p>
 
-      <?php
-      //on se connecte à la base de donnees
-      require_once 'connexion_BDD.php'; ?>
+     
 
 <h1>Votre profil </h1>
 

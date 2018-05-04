@@ -39,31 +39,13 @@
   <p id="barre0"> </p>
 
   <div>
-   <form method="post" action="recherche.php">
-    <div class ="pseudo">  Recherche par pseudo : <br />
-		<input type="text" name="recherche_pseudo"><br /><br />
-	</div>
-
-    <div class ="pseudo">  Recherche par email : <br />
-      <input type="text" name="recherche_email"><br /><br />
-	</div>
-
-	<!-- <div class ="bouton">
-      <input type="submit" value="rechercher"><br /><br />
-	</div> -->
-
-	<div class ="bouton">
-                  <button class="button" onclick="validForm()"><span>Rechercher</span></button>
-    </div>
-
-   </form>
 
 <div id="resultat_recherche">
   <br /><p>Résultat de la recherche :</p><br />
     <?php
     //on se connecte a la base
     require_once('connexion_BDD.php');
-    //$_SESSION["recherche_pseudo"]=$_POST["recherche_pseudo"];
+
     if(!empty($_POST["recherche_pseudo"])) {
       try {
               $statement_pseudo_amis = $conn -> prepare("SELECT pseudo FROM Users WHERE pseudo ='".$_POST["recherche_pseudo"]."'");
@@ -83,43 +65,26 @@
       }
     }
 
-    if(!empty($_POST["recherche_email"])) {
-      try {
-              $statement_pseudo_amis = $conn -> prepare("SELECT pseudo FROM Users WHERE email ='".$_POST["recherche_email"]."'");
-              $statement_pseudo_amis -> EXECUTE();
-              $pseudo_amis = $statement_pseudo_amis -> fetchColumn(0);
-
-              $statement_email_amis = $conn -> prepare("SELECT email FROM Users WHERE email ='".$_POST["recherche_email"]."'");
-              $statement_email_amis -> EXECUTE();
-              $email_amis = $statement_email_amis -> fetchColumn(0);
-
-              if (!empty($pseudo_amis)) { ?>
-
-                pseudo: <?php echo $pseudo_amis ?><br>
-                email: <?php  echo $email_amis ?>
-
-              <?php }
-      } catch (Exception $e) {
-        echo "la personne que vous cherchiez n'existe pas.".$e->getMessage();
-      }
-    }
+   
     $_SESSION["pseudo_amis"]=$pseudo_amis;
-    $_SESSION["email_amis"]=$email_amis;
-    //echo $_SESSION["pseudo_amis"];
+  
+   
 
      ?>
-   </div>
+</div>
+
      <br />
      <br />
      <div >
 
 
-       <!--<form  action="ajouter_amis.php" method="post">
-         <input type="submit" name="ajouter amis" value="ajouter à mes amis">
-       </form>-->
+    
 	    <a class="ajouter" href="ajouter_amis.php"> ajouter à mes amis </a><br />
+      
+
+
       <?php if ($_SESSION["Admin"]==1): ?>
-        <br /><a class="ajouter" href="delete_user.php"> Supprimer l'utilisateur </a>
+         <br /><a class="ajouter" href="delete_user.php"> Supprimer l'utilisateur </a>
       <?php endif; ?>
 
      </div>

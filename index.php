@@ -10,7 +10,7 @@
 
     <!-- Styles -->
    
-    <link href='plugins/font-awesome/css/font-awesome.min.css' rel="stylesheet">
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href='plugins/bootstrap/css/bootstrap.min.css' rel="stylesheet">
     <link href= 'plugins/bootstrap/css/bootstrap-theme.min.css' rel="stylesheet">
     <link href='css/guest.css' rel="stylesheet">
