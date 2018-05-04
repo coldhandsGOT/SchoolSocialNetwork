@@ -23,14 +23,14 @@ session_start();
                        
                         <div class="form-group">
                             <label for="date_modif">Birthday</label>
-                            <input type="date" class="form-control datepicker" name="naissance" value="<?php echo $_SESSION["naissance"] ?>">
+                            <input type="date" class="form-control datepicker" name="date_modif" value="<?php echo $_SESSION["naissance"] ?>">
                                 
                         </div>
 
 
                         <div class="form-group">
-                            <label for="location"> localisation </label>
-                            <input type="text" name ="location" value="<?php echo $_SESSION["location"] ?>" class="form-control">
+                            <label for="location_modif"> localisation </label>
+                            <input type="text" name ="location_modif" value="<?php echo $_SESSION["location"] ?>" class="form-control">
                         </div>
 
 
@@ -40,13 +40,13 @@ session_start();
                         </div>
 
                         <div class="form-group">
-                            <label for="phone"> phone </label>
-                            <input type="phone" name ="phone" value="<?php echo $_SESSION["phone"] ?>" class="form-control" >
+                            <label for="phone_modif"> phone </label>
+                            <input type="phone" name ="phone_modif" value="<?php echo $_SESSION["phone"] ?>" class="form-control" >
                         </div>
 
                         <div class="form-group">
-                            <label for="bio"> résumé </label>
-                            <textarea name ="bio" id="bio"  cols="40" rows ="9" class="form-control" > <?php echo $_SESSION["about"] ?> </textarea>
+                            <label for="about_modif"> CV </label>
+                            <textarea name ="about_modif" id="bio"  cols="40" rows ="9" class="form-control" > <?php echo $_SESSION["about"] ?> </textarea>
                         </div>
 
                         <div class="form-group">
