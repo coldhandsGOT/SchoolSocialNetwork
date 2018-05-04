@@ -1,0 +1,119 @@
+#entete {
+	background-image: url(../images/background9.png);
+}
+
+
+/* ON FAIT UN RESET */
+* {
+	margin :0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+}
+
+html {
+	background-image: url(../images/background2.jpg);
+}
+
+
+/* ONGLETS RETOUR */
+#retour {
+	font-size: 14px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 100px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 10px;
+	border: 1.5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+a:link {
+ 	color:black;
+ }
+
+ a:visited {
+ 	color:black;
+ }
+
+ a:hover {
+     color: rgb(236, 185, 31);
+ }
+
+/* JUSTE POUR LA DECORATION -> LA BARRE noir VIDE*/
+#barre0 {
+	float: center;
+	margin-top: 0px;
+	background: #00FFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* PIED DE PAGE */
+.footer {
+ 	position : relative;
+ 	word-spacing: 150px;
+	width: 100%;
+	text-align: center;
+	display: block;
+ }
+
+
+ nav ul
+ {
+	 padding: 0px;
+	 margin: 0px;
+	 list-style-type: none;
+ }
+
+ nav li
+ {
+	display: inline-block;
+	width: 15%;
+	height: 1%;
+    margin: 0px;
+	padding: 0px;
+	border-right: 2px solid #CCCCCC;
+	text-align: center;
+	line-height: 40px;
+ }
+
+ nav li a
+ {
+	 display: block;
+	 text-decoration: none;
+	 color: #FFFFFF
+ }
+
+ nav li :hover
+ {
+	 background-color: #00FFFF;;
+ }
+
+ .encadrement
+ {
+
+
+ }
+ .container
+ {
+	 background-image: url(../images/background9.png);
+	 border-radius: 10px;
+	 border: 1.5px solid white;
+	 margin-top: 5%;
+	 text-align: center;
+	 display: inline-block;
+	 border: 1px solid black;
+	 position: relative;
+ }
+ h1
+ {
+	 text-align: center;
+	 margin-top: 3%;
+ }

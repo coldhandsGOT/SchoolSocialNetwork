@@ -1,0 +1,198 @@
+
+/* ON FAIT UN RESET */
+* {
+	margin :0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+}
+/* *********************************************
+*************** ENTETE DU SITE *****************
+*********************************************** */
+/*ENTETE FOND BLANC AVEC LE LOGO ET LES ONGLETS*/
+
+/*ENTETE FOND BLANC AVEC LE LOGO*/
+#entete {
+	background-image: url(../images/background9.png);
+}
+
+/* FOND D'ECRAN SUR TOUTE LA PAGE */
+html {
+	background-image: url(../images/background2.jpg);
+}
+
+/* JUSTE POUR LA DECORATION -> LA BARRE noir VIDE*/
+#barre0 {
+	float: center;
+	margin-top: 0px;
+	background: #00FFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/* ONGLETS RETOUR */
+#retour {
+	font-size: 14px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 100px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 10px;
+	border: 1.5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+
+/* *********************************************
+*************** CORPS DU SITE *****************
+*********************************************** */
+
+#titre1 {
+	font-weight: bold;
+	font-size: 20px;
+	padding-left: 20px;
+	margin-top: 1%;
+	text-align: center;
+}
+
+#titre2 {
+	font-size: 17px;
+	padding-left: 20px;
+	text-align: center;
+}
+
+/* Intégralité du formulaire*/
+#formulaire {
+	
+	margin-left: 5%;
+	margin-top: 1%;
+	font-size: 14px;
+}
+
+/* pour les 3 cadres identifiant, infos perso et cgu */
+#identifiants, #infos, #cgu  {
+	border: 1px solid black;
+	margin-left: 25%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 45%;
+}
+
+/* pour mettre les titres de chaque cadre en gras */
+#titre_cgu, #titre_identifiants, #titre_infos {
+	font-weight: bold;
+	font-size: 20px;
+}
+/* les champs à remplir */
+#naissance, #nom, #prenom, #sexe, #date, #mdp1, #mdp2, #email {
+border-radius: 5px;
+border: 3px solid rgb(201, 207, 210);
+padding-left: 10px;
+}
+
+.message {
+	float:right;
+}
+
+.identite
+
+{
+	text-align: center;
+	font-size: 17px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+/* Pour le bouton valider l'inscription
+#valider {
+margin-top: 480px;
+}
+*/
+
+ /* PIED DE PAGE */
+.footer {
+ 	position : relative;
+ 	bottom: 0;
+ 	word-spacing: 150px;
+	width: 100%;
+	text-align: center;
+	display: block;
+ }
+
+ /*CHANGEMENT DE COULEUR LORS DU PASSAGE DE LA SOURIS */
+ a:link {
+ 	color:black;
+ }
+
+ a:visited {
+ 	color:black;
+ }
+
+ a:hover {
+     color: rgb(236, 185, 31);
+ }
+
+ input.invalid {
+ 	background-color: #FF9;
+ 	border: 2px red inset;
+ }
+
+ label.invalid {
+ 	color: #F00;
+ }
+
+ /* Pour le bouton VALIDER */
+ .button {
+   display: inline-block;
+   border-radius: 4px;
+   background-color: #00FFFF ;
+   border: none;
+   color: #000000;
+   text-align: center;
+   font-size: 18px;
+   padding: 10px;
+   width: 20%;
+   transition: all 0.5s;
+   cursor: pointer;
+   margin: 5px;
+ }
+ 
+ .bouton
+ {
+	 
+	 padding-left: 42%;
+	 
+ }
+
+ .button span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   transition: 0.5s;
+ }
+
+ .button span:after {
+   content: '»';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.5s;
+   text-align: center ; 
+ }
+
+ .button:hover span {
+   padding-right: 25px;
+ }
+
+ .button:hover span:after {
+   opacity: 1;
+   right: 0;
+ }

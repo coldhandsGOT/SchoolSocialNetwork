@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<?php session_start(); ?>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Discussion instantanée</title>
+		<link type="text/css" rel="stylesheet" href="../CSS/amis.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+<body>
+
+ <div id="entete">
+
+        <a href="../index.php"> <img src = "../images/logo1.png" width="150" height="120" /> </a>
+		 <a id="retour" href="deconnexion.php"> Déconnexion </a>
+        <a id="retour" href="user.php"> Retour </a>
+
+
+      <br />
+
+
+   <p id="barre0"> </p>
+
+  <nav class="navigateur"  >
+
+  <ul>
+		<li><a href="chronologie.php"> Chronologie </a></li>
+		<li><a href="amis.php"> Amis </a></li>
+		<li><a href="photos.php"> Photos </a></li>
+		<li><a href="user.php"> À propos </a></li>
+
+		<li><a href="recherche.php"><img src = "../images/recherche.png" width="15" height="15" />   rechercher des amis</a></li>
+		<li><a href="poster.php">Poster</a></li>
+
+	</ul>
+  </nav>
+
+   </div>
+  <p id="barre0"> </p>
+
+  <div id = "friends">
+	<h2> Liste d'amis</h2><br /><?php
+      require_once('connexion_BDD.php');
+  		$reqamis = $conn ->prepare("SELECT `pseudo_amis`, `email_amis` FROM `Amis` WHERE `email_user`='".$_SESSION['email']."'");
+  		$reqamis -> EXECUTE(); ?>
+	<table>
+	<tr><?php
+  while ($rowamis=$reqamis ->fetch()) { ?>
+    <?php echo $rowamis['pseudo_amis'];echo " : "; echo $rowamis['email_amis']; ?><br /><br />
+  <?php } ?>
+	</tr>
+	</table>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </div>
+
+ <div id="conv">
+
+	<h2>Discussion instantanée</h2>
+
+	<div id="wrapper">
+  <div id="menu">
+        <p class="welcome">Welcome, <b><?php echo $_SESSION['pseudo_amis']; ?></b></p>
+        <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="chatbox"></div>
+
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+    </form>
+</div>
+<!--
+<div id="chatbox"><?php /*
+if(file_exists("log.html") && filesize("log.html") > 0){
+    $handle = fopen("log.html", "r");
+    $contents = fread($handle, filesize("log.html"));
+    fclose($handle);
+
+    echo $contents;
+	function loadLog(){
+
+		$.ajax({
+			url: "log.html",
+			cache: false,
+			success: function(html){
+				$("#chatbox").html(html); //Insert chat log into the #chatbox div
+		  	},
+		});
+}
+function loadLog(){
+		var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
+		$.ajax({
+			url: "log.html",
+			cache: false,
+			success: function(html){
+				$("#chatbox").html(html); //Insert chat log into the #chatbox div
+
+				//Auto-scroll
+				var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+				if(newscrollHeight > oldscrollHeight){
+					$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+				}
+		  	},
+		});
+	}*/
+?></div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+
+});
+</script>
+
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+	//If user wants to end session
+	$("#exit").click(function(){
+		var exit = confirm("Are you sure you want to end the session?");
+		if(exit==true){window.location = 'index.php?logout=true';}
+	});
+});
+
+if(isset($_GET['logout'])){
+
+    //Simple exit message
+    $fp = fopen("log.html", 'a');
+    fwrite($fp, "<div class='msgln'><i>User ". $_SESSION['name'] ." has left the chat session.</i><br></div>");
+    fclose($fp);
+
+    session_destroy();
+    header("Location: index.php"); //Redirect the user
+}
+//If user submits the form
+	$("#submitmsg").click(function(){
+		var clientmsg = $("#usermsg").val();
+		$.post("post.php", {text: clientmsg});
+		$("#usermsg").attr("value", "");
+		return false;
+	});
+</script>
+-->
+
+</div>
+	 <footer class="footer">
+       <p>
+         Conditions Confidentialité ©2017-ECE'Raz
+       </p>
+     </footer>
+
+<br /> <br />
+
+</body>
+</html>

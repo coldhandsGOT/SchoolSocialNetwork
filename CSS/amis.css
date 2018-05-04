@@ -1,0 +1,158 @@
+#entete {
+	background-image: url(../images/background9.png);
+}
+
+
+/* ON FAIT UN RESET */
+* {
+	margin :0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+}
+
+html {
+	background-image: url(../images/background2.jpg);
+}
+
+
+/* ONGLETS RETOUR */
+#retour {
+	font-size: 14px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 100px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 10px;
+	border: 1.5px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+a:link {
+ 	color:black;
+ }
+
+ a:visited {
+ 	color:black;
+ }
+
+ a:hover {
+     color: rgb(236, 185, 31);
+ }
+
+/* JUSTE POUR LA DECORATION -> LA BARRE noir VIDE*/
+#barre0 {
+	float: center;
+	margin-top: 0px;
+	background: #00FFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* PIED DE PAGE */
+.footer {
+ 	position : absolute;
+ 	bottom: 0;
+ 	word-spacing: 150px;
+	width: 100%;
+	text-align: center;
+	display: block;
+ }
+
+
+ nav ul
+ {
+	 padding: 0px;
+	 margin: 0px;
+	 list-style-type: none;
+ }
+
+ nav li
+ {
+	display: inline-block;
+	width: 15%;
+	height: 1%;
+    margin: 0px;
+	padding: 0px;
+	border-right: 2px solid #CCCCCC;
+	text-align: center;
+	line-height: 40px;
+ }
+
+ nav li a
+ {
+	 display: block;
+	 text-decoration: none;
+	 color: #FFFFFF
+ }
+
+ nav li :hover
+ {
+	 background-color: #00FFFF;;
+ }
+ #friends
+ {
+	 border : 2px solid blue;
+	 display : inline-block;
+	 width : 20%;
+	 height :50%;
+ }
+#conv
+{
+	border : 2px solid green;
+	display : inline-block;
+	width : 75%;
+	height : 50%;
+}
+ input { font:12px arial; }
+
+a {
+    color:#0000FF;
+    text-decoration:none; }
+
+    a:hover { text-decoration:underline; }
+
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; }
+
+#loginform { padding-top:18px; }
+
+    #loginform p { margin: 5px; }
+
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+
+#usermsg {
+	margin-left : 5%;
+    width:395px;
+    border:1px solid #ACD8F0; }
+
+#submit { width: 60px; }
+
+.error { color: #ff0000; }
+
+#menu { padding:12.5px 25px 12.5px 25px; }
+
+.welcome { float:left; }
+
+.logout { float:right; }
+
+.msgln { margin:0 0 2px 0; }
