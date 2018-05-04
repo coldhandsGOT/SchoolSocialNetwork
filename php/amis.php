@@ -3,40 +3,8 @@
 <html>
 <?php session_start(); ?>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>Discussion instantanée</title>
-		<link type="text/css" rel="stylesheet" href="../CSS/amis.css" />
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-</head>
-<body>
-
- <div id="entete">
-
-        <a href="../index.php"> <img src = "../images/logo1.png" width="150" height="120" /> </a>
-		 <a id="retour" href="deconnexion.php"> Déconnexion </a>
-        <a id="retour" href="user.php"> Retour </a>
-
-
-      <br />
-
-
-   <p id="barre0"> </p>
-
-  <nav class="navigateur"  >
-
-  <ul>
-		<li><a href="chronologie.php"> Chronologie </a></li>
-		<li><a href="amis.php"> Amis </a></li>
-		<li><a href="photos.php"> Photos </a></li>
-		<li><a href="user.php"> À propos </a></li>
-
-		<li><a href="recherche.php"><img src = "../images/recherche.png" width="15" height="15" />   rechercher des amis</a></li>
-		<li><a href="poster.php">Poster</a></li>
-
-	</ul>
-  </nav>
+<?php include 'header.php' ?>
 
    </div>
   <p id="barre0"> </p>
@@ -147,15 +115,7 @@ if(isset($_GET['logout'])){
 	});
 </script>
 -->
-
-</div>
-	 <footer class="footer">
-       <p>
-         Conditions Confidentialité ©2017-ECE'Raz
-       </p>
-     </footer>
-
-<br /> <br />
+<?php include 'footer.php' ?>
 
 </body>
 </html>

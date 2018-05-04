@@ -9,33 +9,11 @@
 </head>
 
 <body>
-  <div id="entete">
-
-        <a href="../index.php"> <img src = "../images/logo1.png" width="150" height="120" /> </a>
-		 <a id="retour" href="deconnexion.php"> Déconnexion </a>
-        <a id="retour" href="user.php"> Retour </a>
+  <?php include 'header.php' ?>
 
 
-      <br />
 
 
-   <p id="barre0"> </p>
-
-  <nav class="navigateur"  >
-
-  <ul>
-		<li><a href="chronologie.php"> Chronologie </a></li>
-		<li><a href="amis.php"> Amis </a></li>
-		<li><a href="photos.php"> Photos </a></li>
-		<li><a href="user.php"> À propos </a></li>
-
-		<li><a href="recherche.php"><img src = "../images/recherche.png" width="15" height="15" />   rechercher des amis</a></li>
-		<li><a href="poster.php">Poster</a></li>
-
-	</ul>
-  </nav>
-
-   </div>
   <p id="barre0"> </p>
 
   <div>
@@ -91,11 +69,8 @@
 
   </div>
 
-      <footer class="footer">
-       <p>
-         Conditions Confidentialité ©2017-ECE'Raz
-       </p>
-     </footer>
+      <?php include 'footer.php' ?>
+
 
 <br /> <br />
 

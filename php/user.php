@@ -1,50 +1,145 @@
+<!DOCTYPE html>
+<html>
+
 <?php
 // Start the session
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html>
 
-<head>
-          <meta charset = "utf-8" />
-          <title> <?php echo $_SESSION['pseudo'];?> </title>
-		  <link rel="stylesheet" type="text/css" href="../CSS/user.css"/>
-</head>
+
+<?php include 'header.php' ?>
+
+<div class="container">
+  <div class="col-lg-4">
+
+                   
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <p class="text-center"><?php echo $_SESSION["pseudo"] ?></p>
+      </div> 
+
+      <div class="panel-body">
+        <center>
+        <img src="{{ Storage::url($user->avatar) }}" width="250" height="250" style="border-radius: 4%;" alt="">
+        </center>
+        </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="body">
+        <friend :profile_id="{{ $user->id}}">  </friend>
+      </div>
+    </div>
+ 
+
+<div class="profile-information">
+   <!-- @if(Auth::id()==$user->id)  -->
+        <div class="edit-button">
+            <div class="button-frame">
+                <a href="profile.edit" data-toggle="modal" data-target="#info">
+                    <i class="fa fa-pencil"></i>
+                    Edit
+                </a>
+            </div>
+        </div>
+    <!-- @endif -->
+
+  
+<ul class="list-group">
+        <li class="list-group-item">
+
+          <?php if ($_SESSION["civilite"]=='M') { ?>
+             <i class="fa fa-mars">Male</i>
+          <?php } else { ?>
+
+             <i class="fa fa-venus">Female</i>
+         <?php } ?>
+
+        </li>
+
+     <li class="list-group-item">
+        
+             <i class="fa fa-birthday-cake"></i>
+         <?php echo $_SESSION["naissance"] ?>
+    </li>
+        
+        <li class="list-group-item">
+          
+             <i class="fa fa-map-marker"></i>
+         <?php echo $_SESSION["location"] ?>
+    </li>
+     <li class="list-group-item">
+             <i class="fa fa-mobile"></i>
+          <?php echo $_SESSION["phone"] ?>
+    </li>
+
+    <li class="list-group-item">
+          
+             <i class="fa fa-info-circle"></i>
+          <?php echo $_SESSION["about"] ?>
+    </li>   
+
+    </ul>
+
+  </div>
+</div>
+
+</div>
+
+
+<!--
+@if(Auth::id()==$user->id)   -->
+<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           
+        </div>
+    </div>
+</div>
+<!-- @endif  -->
+
+    
+
+
+   
+
+<?php include 'footer.php' ?>
+
+<script src='../plugins/jquery/jquery-2.1.4.min.js'></script>
+<script src='../plugins/pace-master/pace.min.js'></script>
+<script src='../plugins/bootstrap/js/bootstrap.min.js'></script>
+<script src='../plugins/jquery.serializeJSON/jquery.serializejson.min.js'></script>
+<script src='../plugins/fancybox/dist/jquery.fancybox.min.js'></script>
+<script src='../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'></script>
+<script src='../plugins/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js'></script>
+<script src='../plugins/select2/dist/js/select2.full.min.js'></script>
+<script src='../js/around.js'></script>
+<script src='../js/wall.js'></script>
+<script src='../js/notifications.js'></script>
+
+</style>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
 
 <body>
-                                <!--***********************
-                                          ENTETE
-                                *********************** -->
-
-            <div id="entete">
-
-        <a href="../index.php"> <img src = "../images/logo1.png" width="150" height="120" /> </a>
-		 <a id="retour" href="deconnexion.php"> Déconnexion </a>
-        <a id="retour" href="user.php"> Retour </a>
-
-
-      <br />
-
-
-   <p id="barre0"> </p>
-
-  <nav class="navigateur"  >
-
-  <ul>
-		<li><a href="chronologie.php"> Chronologie </a></li>
-		<li><a href="amis.php"> Amis </a></li>
-		<li><a href="photos.php"> Photos </a></li>
-		<li><a href="user.php"> À propos </a></li>
-
-		<li><a href="recherche.php"><img src = "../images/recherche.png" width="15" height="15" />   rechercher des amis</a></li>
-		<li><a href="poster.php">Poster</a></li>
-
-	</ul>
-  </nav>
-
-   </div>
-  <p id="barre0"> </p>
+  
 
      
 
@@ -56,8 +151,8 @@ session_start();
           <img src="../images/photo_profil_defaut.jpg" width="300" height="300">
         </div>
         <div id = "description">
-          <label>Pseudo : </label> <?php echo $_SESSION["pseudo"] ?><br /><br />
-          <label>Date de naissance : </label> <?php echo $_SESSION["date_naissance"] ?><br /><br />
+          <label>Pseudo : </label> <br /><br />
+          <label>Date de naissance : </label> <br /><br />
           <label>Email : </label> <?php echo $_SESSION["email"] ?><br /><br />
           <label>Civilité : </label> <?php if ($_SESSION["civilite"]=='M') {
             echo "Homme";

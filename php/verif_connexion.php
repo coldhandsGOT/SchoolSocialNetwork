@@ -36,7 +36,7 @@
         //vérifier si l'identification est correcte.
         if ($em == true){
 
-          //recuperer les données de l'Users dans la BDD
+          //recuperer les données du User de la BDD
           $statement_pseudo = $conn -> prepare("SELECT pseudo FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
           $statement_pseudo -> EXECUTE();
           $pseudo = $statement_pseudo -> fetchColumn();
@@ -56,9 +56,9 @@
           $statement_civilite -> EXECUTE();
           $civilite = $statement_civilite -> fetchColumn(0);
 
-          $statement_date_naissance = $conn -> prepare("SELECT date_naissance FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
-          $statement_date_naissance -> EXECUTE();
-          $date_naissance = $statement_date_naissance -> fetchColumn(0);
+          $statement_naissance = $conn -> prepare("SELECT naissance FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_naissance -> EXECUTE();
+          $naissance = $statement_naissance -> fetchColumn(0);
 
           $statement_photo_profil = $conn -> prepare("SELECT photo_profil FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
           $statement_photo_profil -> EXECUTE();
@@ -78,16 +78,36 @@
 
 
 
+
+          $statement_phone = $conn -> prepare("SELECT phone FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_phone -> EXECUTE();
+          $phone = $statement_phone -> fetchColumn(0);
+
+          $statement_location = $conn -> prepare("SELECT location FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_location -> EXECUTE();
+          $location = $statement_location -> fetchColumn(0);
+
+          $statement_about = $conn -> prepare("SELECT about FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_about -> EXECUTE();
+          $about = $statement_about -> fetchColumn(0);
+
+
+
+
+
           //enregistrer les données de l'Users dans la session.
           $_SESSION["email"] = $email;
           $_SESSION["mdp"] = $mdp;
           $_SESSION["pseudo"] = $pseudo;
           $_SESSION["civilite"] = $civilite;
-          $_SESSION["date_naissance"] = $date_naissance;
+          $_SESSION["naissance"] = $naissance;
           $_SESSION["photo_profil"] = $photo_profil;
           $_SESSION["image_fond"] = $image_fond;
           $_SESSION["description_user"] = $description_user;
           $_SESSION["Admin"] = $admin;
+          $_SESSION["phone"] = $phone;
+          $_SESSION["location"] = $location;
+          $_SESSION["about"] = $about;
 
 
         } 
