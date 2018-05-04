@@ -1,10 +1,5 @@
 
 
-/* FOND D'ECRAN SUR TOUTE LA PAGE */
-html {
-	background-image: url(../images/background.jpg);
-}
-
 .titre1 {
 	text-align: center ;
 	height : 10% ; 

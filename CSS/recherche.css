@@ -1,10 +1,5 @@
 
 
-#entete {
-	background-image: url(../images/background9.png);
-}
-
-
 /* ON FAIT UN RESET */
 * {
 	margin :0;
@@ -15,9 +10,7 @@ body {
 	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
 }
 
-html {
-	background-image: url(../images/background2.jpg);
-}
+
 
 
 /* ONGLETS RETOUR */

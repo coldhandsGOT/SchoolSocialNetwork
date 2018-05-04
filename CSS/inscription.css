@@ -8,20 +8,7 @@
 body {
 	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
 }
-/* *********************************************
-*************** ENTETE DU SITE *****************
-*********************************************** */
-/*ENTETE FOND BLANC AVEC LE LOGO ET LES ONGLETS*/
 
-/*ENTETE FOND BLANC AVEC LE LOGO*/
-#entete {
-	background-image: url(../images/background9.png);
-}
-
-/* FOND D'ECRAN SUR TOUTE LA PAGE */
-html {
-	background-image: url(../images/background2.jpg);
-}
 
 /* JUSTE POUR LA DECORATION -> LA BARRE noir VIDE*/
 #barre0 {
