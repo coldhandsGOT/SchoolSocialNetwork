@@ -15,8 +15,8 @@ session_start();
                     <form action="modif_userBDD.php" method="post" enctype="multipart/form-data">
                         
                         <div class="form-group">
-                            <label for="avatar"> upload photo </label>
-                            <input type="file" name ="avatar"  class="form-control" accept="image/*">
+                            <label for="photo_modif"> upload photo </label>
+                            <input type="file" name ="photo_modif"  class="form-control" accept="image/*">
                         </div>
 
 
