@@ -102,7 +102,7 @@
                     <section id="content2" class="tab-content">
                        
                                                            
-                                    <form class="register" role="form" method="POST" action="{{ route('register') }}">
+                                    <form class="register" role="form" method="POST" action="php/add_user.php">
                                         <input type="hidden" value="register" name="tab" />
                                        
                                         <h2>Rejoigner le réseau social de L'ECE</h2>
@@ -111,14 +111,12 @@
                                             
                                             <div class=" col-md-4 ">
                                                      <label for="name" class="control-label">Sexe</label>
-                                                     
                                                         <div class="col-md-12">
                                                             <select name="civilite" id="civilite" class="form-control"> 
-                                                                        <option value="1">Male</option>
-                                                                        <option value="0">Female</option>
+                                                                        <option value="M">Male</option>
+                                                                        <option value="F">Female</option>
                                                             </select>
                                                         </div>
-                                                
                                             </div>
 
                                             <div class="col-md-12">
@@ -136,7 +134,7 @@
                                                     <div class="form-group">
                                                          <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle-o"></i> </span>
-                                                                    <input id="name" type="text" class="form-control" placeholder="Chris"  name="name" value="{{ old('name') }}" required>
+                                                                    <input id="name" type="text" class="form-control" placeholder="Chris"  name="name" onblur="validerName()" required>
                                                          </div>
                                                     </div>
                                             </div>
@@ -148,31 +146,31 @@
                                                     <div class="form-group">
                                                          <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle-o"></i> </span>
-                                                                    <input id="lastname" type="text" class="form-control" placeholder="Chris"  name="lastname" value="{{ old('lastname') }}" required>
+                                                                    <input id="lastname" type="text" class="form-control" placeholder="Chris"  name="lastname" onblur="validerLastname()" required>
                                                          </div>
                                                     </div>
                                             </div>
 
 
 
-                                            <div class="col-md-12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <div class="col-md-12">
                                                 <label for="email" class="control-label">E-Mail Address</label>
                                                     <div class="form-group">
                                                          <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i> </span>
-                                                                    <input id="email" type="text" class="form-control" placeholder="Chris.Roberts@email.com"  name="email" value="{{ old('email') }}" required>
+                                                                    <input id="email" type="text" class="form-control" placeholder="Chris.Roberts@email.com"  name="email" onblur="valideremail()" required>
                                                          </div>
                                                     </div>
                                             </div>
 
 
                                            
-                                            <div class="col-md-12 {{ $errors->has('password') ? ' has-error' : '' }}">
+                                            <div class="col-md-12">
                                                 <label for="password" class="control-label">Password</label>
                                                     <div class="form-group">
                                                          <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt"></i> </span>
-                                                                    <input id="password" type="password" class="form-control" placeholder="****************"  name="password" value="{{ old('password') }}" required>
+                                                                    <input id="password" type="password" class="form-control" placeholder="****************"  name="password" onblur="validerPassword()" required>
                                                          </div>
                                                     </div>
                                             </div>
