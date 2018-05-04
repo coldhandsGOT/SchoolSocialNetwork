@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "ECE'Raz";
+$dbname = "ecesocialnetwork";
 
 
 try {
