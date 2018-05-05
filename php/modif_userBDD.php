@@ -28,11 +28,7 @@ $about_modif=$_POST["about_modif"];
    $photo_modif = $_FILES['photo_modif'];
     
        
-    if (empty($photo_modif)) 
-        {
-                $photo_modif=$_SESSION["profile_pic"];
-        }
-    else{
+  
               $name = $photo_modif['name'];
               $folder = "../images/uploads/profile_pic/".$_SESSION["email"]."/";
                mkdir($folder, 0700);
@@ -45,7 +41,7 @@ $about_modif=$_POST["about_modif"];
 
                $_SESSION['profile_pic']=$path;
 
-        }
+    
 
 
 
