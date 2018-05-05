@@ -60,9 +60,9 @@
           $statement_naissance -> EXECUTE();
           $naissance = $statement_naissance -> fetchColumn(0);
 
-          $statement_photo_profil = $conn -> prepare("SELECT photo_profil FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
-          $statement_photo_profil -> EXECUTE();
-          $photo_profil = $statement_photo_profil -> fetchColumn(0);
+          $statement_profile_pic = $conn -> prepare("SELECT profile_pic FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_profile_pic -> EXECUTE();
+          $photo_profil = $statement_profile_pic -> fetchColumn(0);
 
           $statement_image_fond = $conn -> prepare("SELECT image_fond FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
           $statement_image_fond -> EXECUTE();
@@ -98,10 +98,10 @@
           //enregistrer les données de l'Users dans la session.
           $_SESSION["email"] = $email;
           $_SESSION["mdp"] = $mdp;
-          $_SESSION["pseudo"] = $pseudo;
+          $_SESSION["pseudo"] = $pseudo;  
           $_SESSION["civilite"] = $civilite;
           $_SESSION["naissance"] = $naissance;
-          $_SESSION["photo_profil"] = $photo_profil;
+          $_SESSION["profile_pic"] = $photo_profil;
           $_SESSION["image_fond"] = $image_fond;
           $_SESSION["description_user"] = $description_user;
           $_SESSION["Admin"] = $admin;
