@@ -1,7 +1,13 @@
+<?php
+// Start the session
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-          <!-- Retour à la page indiquée avec un intervalle de temps de 5sec-->
           <meta http-equiv="refresh" content="2;user.php" />
 </head>
 
@@ -25,7 +31,7 @@ try {
       $mail_existant = $verif_mail ->fetchColumn();
 
       if ($mail_existant == true) {
-        echo "Email existé";
+        echo "Email existing";
       }
     }
 
