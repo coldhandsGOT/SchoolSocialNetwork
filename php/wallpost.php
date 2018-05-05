@@ -1,31 +1,44 @@
+
+
+
   <div class="col-md-6">
                <div class="clearfix"></div>
 
 <div class="panel panel-default new-post-box">
     <div class="panel-body">
-        <form id="form-new-post">
-            <input type="hidden" name="group_id" value="">
-            <div><textarea rows="5" cols="58" name="content" placeholder="Share what you think or photos"></textarea></div>
-            <div class="image-area">
-                <a href="javascript:;" class="image-remove-button" onclick="removePostImage()"><i class="fa fa-times-circle"></i></a>
-                <img src="" />
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-xs-4">
-                  
-                    <input type="file" accept="image/*" class="image-input" name="photo" onchange="previewPostImage(this)">
+        
+      
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>
+            Poster votre photo ou video :
+              </legend><br />
+
+                <div class = "corps">
+                              <!-- Sélectionner la photo -->
+                              <input type="hidden" name="MAX_FILE_SIZE" value="1000000000">
+                              <label>Choisissez une photo ou une vidéo</label><br />
+                              <input type="file" name="avatar" id="fileToUpload">
+                              <br /><br />
+                              <!-- Insérer la description de la publication-->
+                              <label id="description"> Description :</label><br />
+                              <textarea name="Description" ></textarea><br /><br />
+                              
+                              <label id="confidentialite"> Confidentialite :</label><br />
+                                  <select class="" name="confidentialite">
+                                      <option value="0">Public</option>
+                                      <option value="1">Seulement les amis</option>
+                                      <option value="2">Moi-même</option>
+                                  </select>
+                              <br><br>
+
+                            <div class ="bouton">
+                                 <button class="button" name="submit" ><span>Poster</span></button>
+                           </div>           
                 </div>
-                <div class="col-xs-4">
-                    
-                </div>
-                <div class="col-xs-4">
-                    <button type="button" class="btn btn-primary btn-submit pull-right" onclick="">
-                        Post!
-                    </button>
-                </div>
-            </div>
-        </form>
+    </fieldset>
+    </form>
+
     </div>
 </div>
 </div>

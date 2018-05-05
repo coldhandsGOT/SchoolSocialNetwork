@@ -61,7 +61,7 @@
                           <ul class="nav navbar-nav navbar-right">
                                  <ul class="nav navbar-nav">
                                 <li><a href="chronologie.php">Home</a></li>
-                                <li><a href="amis.php">Messages</a></li>
+                                <li><a href="poster.php">Messages</a></li>
                                 <li><a href="photos.php">Photos</a></li>
                                 
                               </ul>
