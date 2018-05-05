@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
-$dbname = "ecesocialnetwork";
+$password = "";
+$dbname = "ece_socialweb";
 
 
 try {
