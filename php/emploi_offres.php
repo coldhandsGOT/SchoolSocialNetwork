@@ -28,10 +28,10 @@ session_start();
     if(mysql_num_rows($raw_results) > 0){ // si y'a une ou plusieurs lignes, alors:
       
       while($results = mysql_fetch_array($raw_results)){
-      // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
+      // $results = mysql_fetch_array($raw_results) insert les données de la db dans l'array $results
       
-        echo "<p><h3>".$results['title']."</h3>".$results['text']."</p>";
-        // posts results gotten from database(title and text) you can also show id ($results['id'])
+        echo "<p><h3>".$results['id']."</h3>".$results['poste']."</h3>".$results['entreprise']."</h3>".$results['address']."</h3>".$results['email']."</h3>".$results['contenu']. "</p>";
+        // affiche les données, rajouté () plus tards
       }
       
     }
