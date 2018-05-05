@@ -2,7 +2,7 @@
 <html>
 <head>
           <!-- Retour à la page indiquée avec un intervalle de temps de 5sec-->
-          <meta http-equiv="refresh" content="2;../index.php" />
+          <meta http-equiv="refresh" content="2;user.php" />
 </head>
 
 <body>
