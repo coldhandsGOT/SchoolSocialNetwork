@@ -15,6 +15,9 @@
 </div>
 
 
+
+
+
 <div class="container">
     <div class="row">    
         <div class="col-xs-8 col-xs-offset-2">
@@ -32,6 +35,7 @@
                       <li><a href="#all">Anything</a></li>
                     </ul>
                 </div>
+               
                 <input type="hidden" name="search_param" value="all" id="search_param">         
                 <input type="text" class="form-control" name="x" placeholder="Search term...">
                 <span class="input-group-btn">
@@ -41,13 +45,13 @@
         </div>
 	</div>
 </div>
-
+ <?php include 'emploi_menu.php' ?>
 
   <center><h4>
     
-<button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
-                &#43; &nbsp; Déposez une candidature 
-            </button>
+                <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
+                     &#43; &nbsp; Déposez une candidature 
+                </button>
 
 </h4></center>
 
@@ -59,6 +63,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <center><h4 class="modal-title">Déposer une candidature </h4></center>
             </div>
+
             <div class="modal-body modal-body-spontaneous">
                 <form action="emploi_candidature.php" method="post" class="form-horizontal" role="form" >
                     <div class="form-group">

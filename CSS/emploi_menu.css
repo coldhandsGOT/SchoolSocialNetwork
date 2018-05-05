@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 2rem;
+  line-height: normal;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.grid-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.flip-container {
+  display: inline-block;
+  height: 300px !important;
+  margin: 10px;
+  width: 180px !important;
+  position: relative;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+}
+.flip-container:hover .flip-card {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+}
+.flip-card > div {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.flip-card .front-face {
+  padding: 8px;
+}
+.flip-card .front-face img {
+  height: 120px;
+  margin: 15px 15px 0;
+  width: 120px;
+}
+.flip-card .front-face span {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+.flip-card .back-face-center {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  cursor: default;
+}
+.flip-card .back-face-center p {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  padding: 8px;
+}
+
+#f1 .front-face,
+#f1 .back-face-center {
+  background-color: #e84c3d;
+}
+#f1 .front-face img {
+  background: rgba(0, 0, 0, 0) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/techmodal-icon-sprite.png) repeat scroll 0 0;
+}
+
+#f2 .front-face,
+#f2 .back-face-center {
+  background-color: #2a80b9;
+}
+#f2 .front-face img {
+  background: rgba(0, 0, 0, 0) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/techmodal-icon-sprite.png) repeat scroll -120px 0;
+}
+
+#f3 .front-face,
+#f3 .back-face-center {
+  background-color: #16a086;
+}
+#f3 .front-face img {
+  background: rgba(0, 0, 0, 0) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/techmodal-icon-sprite.png) repeat scroll -240px 0;
+}
+
+#f4 .front-face,
+#f4 .back-face-center {
+  background-color: #9b58b5;
+}
+#f4 .front-face img {
+  background: rgba(0, 0, 0, 0) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/techmodal-icon-sprite.png) repeat scroll -480px 0;
+}
+
+#f5 .front-face,
+#f5 .back-face-center {
+  background-color: #f39c11;
+}
+#f5 .front-face img {
+  background: rgba(0, 0, 0, 0) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9487/techmodal-icon-sprite.png) repeat scroll -360px 0;
+}

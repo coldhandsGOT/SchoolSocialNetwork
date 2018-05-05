@@ -8,7 +8,7 @@ session_start();
 
 <head>
   <meta charset = "utf-8" />
-          <title> Chronologie </title>
+          <title> ECE Social Network </title>
       <link rel="stylesheet" type="text/css" href="../CSS/chronologie.css"/>
       <link rel="stylesheet" href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
       <link href='../plugins/font-awesome/css/font-awesome.min.css' rel="stylesheet">
@@ -19,7 +19,9 @@ session_start();
       <link href='../plugins/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css' rel="stylesheet">
       <link href='../plugins/select2/dist/css/select2.min.css' rel="stylesheet">
       <link href='../plugins/bootstrap/css/bootstrap-theme.min.css' rel="stylesheet">
-      <link href='css/around.css' rel="stylesheet">
+      <link href='../CSS/emploi_menu.css' rel="stylesheet">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <?php include 'header.php' ?>
@@ -36,6 +38,8 @@ session_start();
 	<?php include 'allemploi.php' ?>
 
 </div>
+
+
 
 <script src='../plugins/jquery/jquery-2.1.4.min.js'></script>
 <script src='../plugins/pace-master/pace.min.js'></script>
