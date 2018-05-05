@@ -73,13 +73,14 @@
 
                             <center>
                                  <h4>
-                                    <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
+                                    <button class= "btn btn-info" data-toggle="modal" data-target="#open-offre">
                                          &#43; &nbsp; Déposer un emploi
                                     </button>
                                 </h4>
                              </center>
 
          <?php } ?>
+
 
 
 
@@ -169,6 +170,74 @@
     </div>
 </div>
 
+
+
+<div class="modal fade"  id="open-offre"role="dialog" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <center><h4 class="modal-title"> Ajouter une offre d'emlploi </h4></center>
+            </div>
+
+            <div class="modal-body modal-body-spontaneous">
+                <form action="emploi_offres.php" method="post">
+
+                       
+                        <div class="form-group">
+                             <label for="speciality" class="control-label">Speciality</label>
+                              <div class="col-md-12">
+                            <select name="speciality" id="speciality" class="form-control"> 
+                                    <option value="SI">Systemes d'informations</option>
+                                    <option value="F">Finances</option>
+                                    <option value="R">Robotique</option>
+                                    <option value="BD">Big Data</option>
+                                    <option value="SE">Systèmes Embarqués</option>
+                            </select>
+                            </div>
+                         </div>
+
+
+                         <div class="form-group">
+                            <label for="poste"> Poste </label>
+                            <input type="text" name ="poste" class="form-control">
+                        </div>
+
+
+                         <div class="form-group">
+                            <label for="entreprise"> Entreprise </label>
+                            <input type="text" name ="entreprise" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="address"> Adresse </label>
+                            <input type="phone" name ="address" class="form-control" >
+                        </div>
+
+                         <div class="form-group">
+                            <label for="email"> Email </label>
+                            <input type="text" name ="email" value="" class="form-control" >
+                        </div>
+
+                         <div class="form-group">
+                            <label for="contenu"> Description </label>
+                            <input type="text" name ="contenu"  class="form-control" >
+                        </div>
+
+                        
+                       <div class="form-group">
+                         <p class="text-center">
+                        <button type="button" id="fermer" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button class ="btn btn-primary btn-lg" type="submit"> Submit </button>
+                        </p>
+                     </div>
+
+
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

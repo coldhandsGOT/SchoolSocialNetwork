@@ -33,7 +33,7 @@ session_start();
 <body>
 
 
-
+  <?php include 'side_menu.php' ?>
    
 <div class="emplois">
 	<?php include 'allemploi.php' ?>
