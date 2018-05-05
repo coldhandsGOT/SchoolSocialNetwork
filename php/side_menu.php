@@ -3,7 +3,7 @@
 
    <div class="h-20"></div>
    <div class="container">
-            <div class="row">            
+            <div class="row">
               <div class="col-md-3">
 
 
@@ -23,7 +23,7 @@
                 Profile
             </a>
         </li>
-        
+
         <li  role="presentation">
             <a href="amis.php" >
                 <i class="fa fa-users"></i>
@@ -38,7 +38,7 @@
         </li>
 
             <li  role="presentation">
-            <a href="amis.php" >
+            <a href="envoyermessage.php" >
                 <i class="fa fa-commenting"></i>
                 Message
             </a>

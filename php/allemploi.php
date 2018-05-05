@@ -15,6 +15,9 @@
 </div>
 
 
+
+
+
 <div class="container">
     <div class="row">    
         <div class="col-xs-8 col-xs-offset-2">
@@ -32,6 +35,7 @@
                       <li><a href="#all">Anything</a></li>
                     </ul>
                 </div>
+               
                 <input type="hidden" name="search_param" value="all" id="search_param">         
                 <input type="text" class="form-control" name="x" placeholder="Search term...">
                 <span class="input-group-btn">
@@ -42,12 +46,13 @@
 	</div>
 </div>
 
+ <!-- <?php include 'emploi_menu.php' ?> -->
 
   <center><h4>
     
-<button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
-                &#43; &nbsp; Déposez une candidature 
-            </button>
+                <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
+                     &#43; &nbsp; Déposez une candidature 
+                </button>
 
 </h4></center>
 
@@ -59,54 +64,74 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <center><h4 class="modal-title">Déposer une candidature </h4></center>
             </div>
+
             <div class="modal-body modal-body-spontaneous">
-                <form action="emploi_candidature.php" method="post" class="form-horizontal" role="form" >
+                <form action="emploi_candidature.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+                    
                     <div class="form-group">
-                        <label  for="name" class="col-sm-3 control-label">Prénom Nom* : </label>
+                        <label  for="name_candid" class="col-sm-3 control-label">Prenom* : </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Veuillez entrer vos prénom et nom."/>
+                            <input type="text" class="form-control" id="name_candid" name="name_candid"  required data-validation-required-message="Veuillez entrer vos prénom et nom."/> 
+                            <p class="help-block text-danger"></p> 
+                        </div>
+                    </div>
+
+                   <div class="form-group">
+                        <label  for="lastname_candid" class="col-sm-3 control-label">Nom* : </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="lastname_candid" name="lastname_candid" required data-validation-required-message="Veuillez entrer vos prénom et nom."/> 
+                          <p class="help-block text-danger"></p> 
+                        </div>
+                    </div>
+
+
+         
+                           
+                    <div class="form-group">
+                        <label for ="mail_candid" class="col-sm-3 control-label">Email* : </label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="mail_candid" name="mail_candid" required data-validation-required-message="Veuillez entrer votre email."/>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
+
+  
                     <div class="form-group">
-                        <label for ="mail" class="col-sm-3 control-label">Email* : </label>
+                        <label for ="tel_candid" class="col-sm-3 control-label" data-validation-number-message="Veuillez entrer un numéro de téléphone valide.">Téléphone : </label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="mail" name="mail" required data-validation-required-message="Veuillez entrer votre adresse email."/>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for ="tel" class="col-sm-3 control-label" data-validation-number-message="Veuillez entrer un numéro de téléphone valide.">Téléphone : </label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" id="tel" name="tel"/>
+                            <input type="tel" class="form-control" id="tel_candid" name="tel_candid" />
                         </div>
                     </div>
 
                       <div class="form-group">
-                        <label  for="poste" class="col-sm-3 control-label">Poste* : </label>
+                        <label  for="poste_candid" class="col-sm-3 control-label">Poste : </label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" id="poste" name="poste" rows="1" required data-validation-required-message="Veuillez entrer le poste souhaite."></textarea>
-                            <p class="help-block text-danger"></p>
+                            <textarea class="form-control" id="poste_candid" name="poste_candid" rows="1" ></textarea>  
+                            <p class="help-block text-danger"></p> 
                         </div>
                     </div>
 
+                      
+                    <div class="form-group">
+                        <label for"cv_candid" class="col-sm-3 control-label">CV* : </label>
+                        <div class="col-sm-9">
+                            <input type="file" id="cv_candid" name="cv_candid" value="<?php echo  $_SESSION['cv_candid'] ?>" required data-validation-required-message="Veuillez ajouter votre CV." /> 
+                            <p class="help-block text-danger"></p>
+                            <p class="help-extension text-danger"></p> 
+                        </div>
+                    </div>
+                              
+                   
 
                     <div class="form-group">
-                        <label for"cv" class="col-sm-3 control-label">CV* : </label>
+                        <label  for ="message_candid" class="col-sm-3 control-label">Message : </label>
                         <div class="col-sm-9">
-                            <input type="file" id="cv" name="cv" required data-validation-required-message="Veuillez ajouter votre CV."/>
-                            <p class="help-block text-danger"></p>
-                            <p class="help-extension text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  for ="message" class="col-sm-3 control-label">Message* : </label>
-                        <div class="col-sm-9">
-                            <textarea class="form-control" id="message" name="message" rows="6" required data-validation-required-message="Veuillez entrer un message."></textarea>
+                            <textarea class="form-control" id="message_candid" name="message_candid" rows="6" ></textarea> 
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
-                    
+      
+
                     <center>
                         <button type="button" id="fermer" class="btn btn-default" data-dismiss="modal">Fermer</button>
                         <button type "submit" id="submit" name="submit" type="submit" class="btn btn-primary" >Soumettre</button>
