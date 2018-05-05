@@ -18,7 +18,7 @@ session_start();
 <?php
 
  require "connexion_BDD.php";
-
+/*
   //try catch pour l'insertion dans la bdd
     if (isset($_POST['id']))
     {
@@ -71,7 +71,7 @@ if (isset($_POST['contenu'])){
     //BD  == Big Data
     //F  == finance
     //
-
+*/
 
 //backend pour le module de recherche de emploi_offre
  $search=$_POST['search'];

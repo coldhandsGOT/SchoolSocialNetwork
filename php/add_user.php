@@ -59,6 +59,11 @@ try {
       $naissance = date('Y-m-d',$naissance);
     }
 
+    if (isset($_POST['status'])){
+      $status = strtotime( $_POST['status']);
+      $status = date('Y-m-d',$status);
+    }
+
    
   
 

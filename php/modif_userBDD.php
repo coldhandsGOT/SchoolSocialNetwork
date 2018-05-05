@@ -69,13 +69,6 @@ if (empty($date_modif)) {
 }
 
 
-if (empty($location_modif)) {
-  $location_modif=$_SESSION["location"];
-}else {
-  $sql3 = "UPDATE `Users` SET `location`='$location_modif' WHERE `email`='".$_SESSION['email']."'";
-  $conn -> query($sql3);
-  $_SESSION['location']=$location_modif;
-}
 
 
 

@@ -33,7 +33,7 @@ session_start();
 <body>
 <?php include 'side_menu.php' ?>
 
-<?php echo $_SESSION["status"] ?></p>
+<?php echo $_SESSION["location"] ?>
 
 <?php if($_SESSION["status"]==1) { include 'emploi_add.php'; } else{ ?>
    
