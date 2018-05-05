@@ -16,7 +16,7 @@ session_start();
                         
                         <div class="form-group">
                             <label for="photo_modif"> upload photo </label>
-                            <input type="file" name ="photo_modif"  class="form-control" accept="image/*">
+                            <input type="file" name ="photo_modif"  class="form-control" accept="image/*" value="<?php echo  $_SESSION['profile_pic']; ?>">
                         </div>
 
 

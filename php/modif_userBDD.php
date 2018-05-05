@@ -22,29 +22,32 @@ $phone_modif=$_POST["phone_modif"];
 $about_modif=$_POST["about_modif"];
 
 
+
 // backend upload photo :))))  2 heures de code non stop :(
-$photo_modif = $_FILES['photo_modif'];
+
+   $photo_modif = $_FILES['photo_modif'];
+    
+       
+    if (empty($photo_modif)) 
+        {
+                $photo_modif=$_SESSION["profile_pic"];
+        }
+    else{
+              $name = $photo_modif['name'];
+              $folder = "../images/uploads/profile_pic/".$_SESSION["email"]."/";
+               mkdir($folder, 0700);
+
+              $path = $folder . basename($name);
+              move_uploaded_file($photo_modif['tmp_name'], $path);
+
+              $sql66 = "UPDATE `Users` SET `profile_pic`='$path' WHERE `email`='".$_SESSION['email']."'";
+                $conn -> query($sql66);
+
+               $_SESSION['profile_pic']=$path;
+
+        }
 
 
-$name = $photo_modif['name'];
-
-$folder = "../images/uploads/profile_pic/".$_SESSION["email"]."/";
-mkdir($folder, 0700);
-
-if (empty($pseudo_modif)) {
-  $pseudo_modif=$_SESSION["pseudo"];
-}
-else{
-$path = $folder . basename($name);
-move_uploaded_file($photo_modif['tmp_name'], $path);
-
-$sql66 = "UPDATE `Users` SET `profile_pic`='$path' WHERE `email`='".$_SESSION['email']."'";
-  $conn -> query($sql66);
-
- $_SESSION['profile_pic']=$path;
-
-}
-//
 
 
 
