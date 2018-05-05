@@ -2,7 +2,14 @@
 
 <?php
 require "connexion_BDD.php";
- session_start();
+
+
+session_start();
+
+
+
+
+
 
 
 
@@ -19,7 +26,7 @@ if (isset($_POST['envoi_message']))
     $id_destinataire = $id_destinataire['id'];
 
     $ins = $conn -> prepare('INSERT INTO messages(id_expediteur,id_destinataire,message) VALUES (?,?,?)   ');
-    $ins->execute(array($_SESSION['id'],$id_destinataire,$message));
+    $ins->execute(array(isset($_SESSION['id']),$id_destinataire,$message));
 
     $error = "Votre message a bien été envoyé !";
   }else {

@@ -1,10 +1,13 @@
 <?php
 require "connexion_BDD.php";
+
 session_start();
 
 
+
+
 $msg = $conn->prepare('SELECT * FROM messages WHERE id_destinataire = ?');
-$msg->execute(array($_SESSION['id']));
+$msg->execute(array(isset($_SESSION['id'])));
 $msg_nbr = $msg->rowCount();
 
 ?>
