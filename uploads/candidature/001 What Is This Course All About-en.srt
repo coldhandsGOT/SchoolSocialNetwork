@@ -1,0 +1,116 @@
+1
+00:00:31,010 --> 00:00:36,080
+Hello my name is Mark Budnick and welcome to an introduction to my controllers and the C programming
+
+2
+00:00:36,080 --> 00:00:36,870
+language.
+
+3
+00:00:36,980 --> 00:00:41,480
+I'm a 15 year veteran in the semiconductor industry and presently serve as the computer engineering
+
+4
+00:00:41,480 --> 00:00:43,950
+department chair and Valparaiso University.
+
+5
+00:00:44,300 --> 00:00:49,550
+We have partnered with Texas Instruments to develop his hands on laboratory focused experience to take
+
+6
+00:00:49,550 --> 00:00:54,920
+you through a subset of our sophomore and junior level embedded systems courses step by step.
+
+7
+00:00:55,010 --> 00:01:01,790
+We will ask the questions students ask such as what is a my controller what is a program what is the
+
+8
+00:01:01,790 --> 00:01:06,860
+central processing unit What does a watchdog timer what is an interrupt what is an analog to digital
+
+9
+00:01:06,860 --> 00:01:09,190
+converter what is a liquid crystal display.
+
+10
+00:01:09,290 --> 00:01:12,720
+And finally how do we put all of this stuff together.
+
+11
+00:01:13,400 --> 00:01:19,070
+This course is meant for individuals who are not familiar with controllers and or the C programming
+
+12
+00:01:19,070 --> 00:01:25,070
+language but any experience you have will help for more knowledgeable individuals.
+
+13
+00:01:25,070 --> 00:01:31,700
+We believe that this course will significantly shorten your learning curve for the MSP 430 my family
+
+14
+00:01:32,870 --> 00:01:38,120
+throughout the course will provide scores of examples showing you how to create your own C programs
+
+15
+00:01:38,150 --> 00:01:40,620
+and code composer studio projects.
+
+16
+00:01:40,640 --> 00:01:46,280
+We work closely with Texas Instruments and elements 14 to create a laboratory kit featuring the to-I
+
+17
+00:01:46,340 --> 00:01:49,150
+MSP 430 as far 69 89.
+
+18
+00:01:49,190 --> 00:01:52,080
+Launch pad development platform with this lab kit.
+
+19
+00:01:52,130 --> 00:01:57,320
+We will show you how to use the most common microcontroller peripherals and provide you code to get
+
+20
+00:01:57,320 --> 00:02:00,160
+these peripherals up and running their course.
+
+21
+00:02:00,170 --> 00:02:05,180
+We use the same mixed mode format that we use in our electoral laboratories here a developer is university
+
+22
+00:02:05,830 --> 00:02:11,180
+and emphasis is placed on enabling students to develop their skills by continually practicing with the
+
+23
+00:02:11,180 --> 00:02:13,790
+tools that real developers use every day.
+
+24
+00:02:14,150 --> 00:02:18,830
+Short videos will kick off each of the sections followed by a step by step instructions to get you up
+
+25
+00:02:18,830 --> 00:02:19,900
+and running.
+
+26
+00:02:20,060 --> 00:02:21,870
+And if you have any questions along the way.
+
+27
+00:02:21,980 --> 00:02:23,800
+Our both systems team will be here to help.
+
+28
+00:02:23,960 --> 00:02:26,380
+That's what we're here for to make you successful.
+
+29
+00:02:26,390 --> 00:02:28,310
+Thanks for watching and make it a great day.
+
