@@ -100,8 +100,8 @@ $mon_chiffre = 0;
       $user_receive=$pseudo_amis_recherche;
      
               
-                 echo "pseudo: ".$pseudo_amis_recherche;
-                 echo "email: ".$email_amis_recherche;  
+                 // echo "pseudo: ".$pseudo_amis_recherche;
+                 // echo "email: ".$email_amis_recherche;  
 
   $sql = "INSERT INTO `relation_ami` (`user_one_id`, `user_two_id`, `status`, `action_user_id`)
     VALUES ('$name_candid','$lastname_candid', '$mail_candid', '$tel_candid', '$poste_candid', '$message_candid', '$path')";
