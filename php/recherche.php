@@ -32,7 +32,7 @@
                     <?php echo $_SESSION["pseudo_amis_recherche"] ?>
 </center>
 <center>
-      <button type="button" class="btn btn-warning" name="ajout_bouton">Add friend</button>
+      <button type "submit" id="submit" name="submit" class="btn btn-warning" onclick="validForm()">Add friend</button>
       <a href=""><button type="button" class="btn" >View Profile</button></a>
 <center>
 
@@ -66,38 +66,67 @@ $mon_chiffre = 0;
               $photo_amis_recherche = $statement_photo_amis -> fetchColumn(0);
 
 
-         
-
-              if (!empty($pseudo_amis_recherche)) {
-
-            
-                // echo "pseudo: ".$pseudo_amis."<br>";
-                // echo "email: ".$email_amis;
-              }
-
-
-   $_SESSION["pseudo_amis_recherche"]=$pseudo_amis_recherche;
+             
+  $_SESSION["pseudo_amis_recherche"]=$pseudo_amis_recherche;
    $_SESSION["email_amis_recherche"]=$email_amis_recherche;
    $_SESSION["photo_amis_recherche"]=$photo_amis_recherche;
+         
 
-// $sql="INSERT INTO `amis_recherche` (`pseudo_amis_recherche`, `photo_amis_recherche`, `email_amis_recherche`, `email_user`) 
-// VALUES (".$pseudo_amis_recherche.",".$photo_amis_recherche.",".$email_amis_recherche.", ".$email_user_recherche."";
-//  $conn-> exec($sql);
+              if (isset($pseudo_amis_recherche)) {
+
+            
+                 echo "pseudo: ".$pseudo_amis_recherche;
+                 echo "email: ".$email_amis_recherche;
+  
+
+
+$sql="INSERT INTO `amis` (`pseudo_amis_recherche`, `photo_amis_recherche`, `email_amis_recherche`, `email_user`) 
+VALUES ('".$pseudo_amis_recherche."','".$photo_amis_recherche."','".$email_amis_recherche."', '".$_SESSION["email"]."'";
+ $conn-> exec($sql);
+
+}
 
       } catch (Exception $e) {
         echo "la personne que vous cherchier n'existe pas.".$e->getMessage();
       }
 
-      $conn = null;
 
     }
   //       $sql = "UPDATE `amis_recherche` SET `pseudo_amis_recherche`='".$pseudo_amis_recherche."', `photo_amis_recherche`='".$photos_amis."',`email_amis_recherche`='".$email_amis."'";
   // $conn -> query($sql);
 
 
+        $submit=$_POST["submit"];
+
+        if (!empty($submit)){
+          try{
+
+        $user_send=$_SESSION["pseudo"];
+        $user_receive=$pseudo_amis_recherche;
+
+
+
+               $sql = "INSERT INTO `relation_ami` (`user_one_id`, `user_two_id`, `status`, `action_user_id`)
+    VALUES ('$name_candid','$lastname_candid', '$mail_candid', '$tel_candid', '$poste_candid', '$message_candid', '$path')";
+    $conn-> exec($sql);
+
+
+
+
+          }catch (Exception $e) {
+        echo "la personne que vous cherchier n'existe pas.".$e->getMessage();
+      }
+
+
+
+      $conn = null;
+
+        }
+
    
 
      ?>
+
 
 
 

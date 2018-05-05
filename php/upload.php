@@ -13,7 +13,7 @@ session_start();
 require_once("connexion_BDD.php");
 
 $dossier = "upload/".$_SESSION["email"]."/";
-mkdir($dossier, 0700);
+mkdir($dossier, 0777);
 $fichier = basename($_FILES['avatar']['name']);
 $taille_maxi = 1000000000;
 $taille = filesize($_FILES['avatar']['tmp_name']);

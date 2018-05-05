@@ -8,10 +8,11 @@
 <?php include 'header.php' ?>
 
 
-  <p id="barre0"> </p>
 
 
 </div>
+<?php include 'side_menu.php' ?>
+
 <!--<div class="album">
   <h1>Albums</h1>
     <form class="" action="photos.php" method="post">
