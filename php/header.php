@@ -16,13 +16,13 @@
 
 
 <div id="app">
-  
+
 
               <nav class="navbar navbar-inverse">
                   <div class="container-fluid">
 
                       <div class="navbar-header">
-   
+
                           <!-- Collapsed Hamburger -->
                           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                               <span class="sr-only">Toggle Navigation</span>
@@ -39,7 +39,7 @@
 
 
                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                           
+
 
                             <!-- Left Side Of Navbar -->
                             <div class="navbar-form navbar-left">
@@ -60,7 +60,7 @@
                           <ul class="nav navbar-nav navbar-right">
                                  <ul class="nav navbar-nav">
                                 <li><a href="chronologie.php">Home</a></li>
-                                <li><a href="amis.php">Messages</a></li>
+                                <li><a href="envoyermessage.php">Messages</a></li>
                                 <li><a href="photos.php">Photos</a></li>
                                 <li><a href="emploi.php">Emplois</a></li>
                                 
@@ -79,7 +79,7 @@
                                           </a>
                                       </li>
 
- 
+
                                        <li>
                                           <a href="settings.php">
                                               <i class="fa fa-cog"></i> Reglages
@@ -102,6 +102,6 @@
               </nav>
 
 
-              
+
           </div>
 </head>
