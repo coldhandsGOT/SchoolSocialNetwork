@@ -43,39 +43,43 @@
 </div>
 
 
-      <div id ="carousel-metiers"  class="carousel slide" data-ride="carousel" data-interval="false">
-      <!-- Indicators -->
-        <ol class="carousel-indicators" style="margin-top:30px">
-        <li data-target="#carousel-metiers" data-slide-to="0"  class="active"> </li>
-        <li data-target="#carousel-metiers" data-slide-to="1"  class> </li>
-        </ol>
-      <!-- Wrappers for slide -->
-      <div class="carousel-inner" role="listbox">
-        <div class="row item active"> 
-          <div class="col-md-4 ">
-            <a href="#" class="portfolio-link" data-toggle="modal"> 
-            <div class="service">
-            <div class="icon-holder">
-              <img src="img/icons/desk_trading.jpg" alt="" class="icon">
-            </div>
-            <h4 class="heading">Ddsadsadsada</h4>
-            <p class="description"> dasdsadsa</p>
-          </div>
-          </a>  
-         </div>
-         <div class="col-md-4 ">
-          <a href="#" class="portfolio-link" data-toggle="modal"> 
+     <section id="services" class="section section-padded">
+    <div class="container">
+      <div class="row text-center title">
+        <h2>Services</h2>
+        <h4 class="light muted">Achieve the best results with our wide variety of training options!</h4>
+      </div>
+      <div class="row services">
+        <div class="col-md-4">
           <div class="service">
             <div class="icon-holder">
-              <img src="img/icons/algo.jpeg" alt="" class="icon">
+              <img src="img/icons/heart-blue.png" alt="" class="icon">
             </div>
-            <h4 class="heading">dsadsadsaer</h4>
-            <p class="description"> Edsadsadsad’applidasdsadsaisé.</p>
+            <h4 class="heading">Cardio Training</h4>
+            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
           </div>
-          </a>
-         </div>
-         </div>
-         </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service">
+            <div class="icon-holder">
+              <img src="img/icons/guru-blue.png" alt="" class="icon">
+            </div>
+            <h4 class="heading">Yoga Pilates</h4>
+            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service">
+            <div class="icon-holder">
+              <img src="img/icons/weight-blue.png" alt="" class="icon">
+            </div>
+            <h4 class="heading">Power Training</h4>
+            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
