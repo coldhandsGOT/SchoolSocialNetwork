@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-     <!--  <meta http-equiv="refresh" content="0;emploi.php" />    -->
+     <meta http-equiv="refresh" content="0;emploi.php" />   
     
 
 </head>
@@ -53,14 +53,18 @@ if (isset($_POST['email'])){
 if (isset($_POST['contenu'])){
       $contenu_offer = $_POST['contenu'];
     }
-    if (isset($_POST['speciality'])){
+
+if (isset($_POST['speciality'])){
       $speciality_offer = $_POST['speciality'];
+    }
+ if (isset($_POST['contrat'])){
+      $contrat_offer = $_POST['contrat'];
     }
 
 
     //requete pour insérer les données dans la BDD
-    $query = $conn->prepare("INSERT INTO Users (id, speciality, poste, entreprise, address, email,  contenu)
-                                  VALUES ('$id_offer',  '$speciality_offer', '$poste_offer', '$entreprise_offer', '$address_offer', '$email_offer',  '$contenu_offer')");
+    $query = $conn->prepare("INSERT INTO emploi_offres (contrat, speciality, poste, entreprise, address, email,  contenu)
+                                  VALUES (' $contrat_offer', '$speciality_offer', '$poste_offer', '$entreprise_offer', '$address_offer', '$email_offer',  '$contenu_offer')");
     $query->execute();
     echo "updated!";
     

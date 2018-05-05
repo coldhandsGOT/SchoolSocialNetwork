@@ -172,16 +172,20 @@
 
 
 
+
+<!--  DEPOT D'OFFRES D'EMPLOIS  -->
+
+
 <div class="modal fade"  id="open-offre"role="dialog" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <center><h4 class="modal-title"> Ajouter une offre d'emlploi </h4></center>
+                <center><h4 class="modal-title"> Ajouter une offre d'emploi </h4></center>
             </div>
 
             <div class="modal-body modal-body-spontaneous">
-                <form action="emploi_offres.php" method="post">
+                <form action="emplois_add.php" method="post">
 
                        
                         <div class="form-group">
@@ -193,6 +197,18 @@
                                     <option value="R">Robotique</option>
                                     <option value="BD">Big Data</option>
                                     <option value="SE">Systèmes Embarqués</option>
+                            </select>
+                            </div>
+                         </div>
+
+
+                         <div class="form-group">
+                             <label for="contrat" class="control-label">Type de contrat</label>
+                              <div class="col-md-12">
+                            <select name="contrat" id="contrat" class="form-control"> 
+                                    <option value="0">CDD</option>
+                                    <option value="1">CDI</option>
+                                    <option value="2">Stage</option>
                             </select>
                             </div>
                          </div>
