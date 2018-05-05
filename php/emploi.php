@@ -33,16 +33,13 @@ session_start();
 <body>
 
 
-
-
-<?php if($_SESSION["status"]==1) { include 'emploi_add.php'; } else{ ?>
+  <?php include 'side_menu.php' ?>
    
 <div class="emplois">
 	<?php include 'allemploi.php' ?>
 
 </div>
-<?php } ?>
- 
+
 
 
 
