@@ -4,7 +4,6 @@
 <head>
   <meta charset = "utf-8" />
   <title> recherche des amis </title>
-  <link rel="stylesheet" type="text/css" href="../CSS/recherche.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
@@ -14,65 +13,108 @@
 
 
 
-  <p id="barre0"> </p>
 
-  <div>
+<div>
+<?php include 'side_menu.php' ?>
 
-<div id="resultat_recherche">
-  <br /><p>Résultat de la recherche :</p><br />
+<div class="container" style="float=right, margin-right:550px">
+     <div class="col-md-6" >
+<div class="panel panel-primary">
+                  <div class="panel-heading">Search Friend</div>
+                  <div class="panel-body">
+
+
+<center>
+                   <img src="<?php echo  $_SESSION['profile_pic']; ?>" width="250" height="250" style="border-radius: 4%;" alt="error">
+             </center>
+
+             <center style="font-size:34px">
+                    <?php echo $_SESSION["pseudo_amis_recherche"] ?>
+</center>
+<center>
+      <button type="button" class="btn btn-warning" name="ajout_bouton">Add friend</button>
+      <a href=""><button type="button" class="btn" >View Profile</button></a>
+<center>
+
+                  </div>
+                  </div>
+     
+     </div >
+
+</div>
+
+</div>
+
     <?php
     //on se connecte a la base
     require_once('connexion_BDD.php');
 
+$mon_chiffre = 0;
     if(!empty($_POST["recherche_pseudo"])) {
       try {
-              $statement_pseudo_amis = $conn -> prepare("SELECT pseudo FROM Users WHERE pseudo ='".$_POST["recherche_pseudo"]."'");
+              $statement_pseudo_amis = $conn -> prepare("SELECT pseudo FROM users WHERE pseudo ='".$_POST["recherche_pseudo"]."'");
               $statement_pseudo_amis -> EXECUTE();
-              $pseudo_amis = $statement_pseudo_amis -> fetchColumn(0);
+              $pseudo_amis_recherche = $statement_pseudo_amis -> fetchColumn(0);
 
-              $statement_email_amis = $conn -> prepare("SELECT email FROM Users WHERE pseudo ='".$_POST["recherche_pseudo"]."'");
+              $statement_email_amis = $conn -> prepare("SELECT email FROM users WHERE pseudo='".$_POST["recherche_pseudo"]."'");
               $statement_email_amis -> EXECUTE();
-              $email_amis = $statement_email_amis -> fetchColumn(0);
+              $email_amis_recherche = $statement_email_amis -> fetchColumn(0);
 
-              if (!empty($pseudo_amis)) {
-                echo "pseudo: ".$pseudo_amis."<br>";
-                echo "email: ".$email_amis;
+     
+              $statement_photo_amis = $conn -> prepare("SELECT profile_pic FROM users WHERE pseudo='".$_POST["recherche_pseudo"]."'");
+              $statement_photo_amis -> EXECUTE();
+              $photo_amis_recherche = $statement_photo_amis -> fetchColumn(0);
+
+
+         
+
+              if (!empty($pseudo_amis_recherche)) {
+
+            
+                // echo "pseudo: ".$pseudo_amis."<br>";
+                // echo "email: ".$email_amis;
               }
+
+
+   $_SESSION["pseudo_amis_recherche"]=$pseudo_amis_recherche;
+   $_SESSION["email_amis_recherche"]=$email_amis_recherche;
+   $_SESSION["photo_amis_recherche"]=$photo_amis_recherche;
+
+// $sql="INSERT INTO `amis_recherche` (`pseudo_amis_recherche`, `photo_amis_recherche`, `email_amis_recherche`, `email_user`) 
+// VALUES (".$pseudo_amis_recherche.",".$photo_amis_recherche.",".$email_amis_recherche.", ".$email_user_recherche."";
+//  $conn-> exec($sql);
+
       } catch (Exception $e) {
         echo "la personne que vous cherchier n'existe pas.".$e->getMessage();
       }
-    }
 
-   
-    $_SESSION["pseudo_amis"]=$pseudo_amis;
-  
+      $conn = null;
+
+    }
+  //       $sql = "UPDATE `amis_recherche` SET `pseudo_amis_recherche`='".$pseudo_amis_recherche."', `photo_amis_recherche`='".$photos_amis."',`email_amis_recherche`='".$email_amis."'";
+  // $conn -> query($sql);
+
+
    
 
      ?>
-</div>
 
-     <br />
-     <br />
-     <div >
 
 
     
-	    <a class="ajouter" href="ajouter_amis.php"> ajouter à mes amis </a><br />
+	    <a class="" href="ajouter_amis.php"> ajouter à mes amis </a><br />
       
 
 
       <?php if ($_SESSION["Admin"]==1): ?>
-         <br /><a class="ajouter" href="delete_user.php"> Supprimer l'utilisateur </a>
+         <br /><a class="" href="delete_user.php"> Supprimer l'utilisateur </a>
       <?php endif; ?>
 
      </div>
 
-  </div>
-
-      <?php include 'footer.php' ?>
 
 
-<br /> <br />
+
 
 
 
