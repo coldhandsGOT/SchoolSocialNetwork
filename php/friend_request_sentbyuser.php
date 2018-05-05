@@ -14,27 +14,19 @@
 
 
 </head>
+
 <body>
-<?php include 'header.php' ?>
-<?php include 'side_menu.php' ?>
 
-   </div>
-  <p id="barre0"> </p>
+<!-- pending requetst -->
 
-  <div>
-	<h2> Liste d'amis</h2><br />
-  <?php
+
+
+<?php
       require_once('connexion_BDD.php');
 
 
-$user_one = $_GET["user_one_id"];
-$user_two = $_GET["user_two_id"];
 
-
-  
-
-
-   $query = $conn->prepare("select * from relation_ami where (`user_one_id` = 'user_one' OR `user_two_id` = 'user_two') AND `status` = '1'");
+   $query = $conn->prepare("SELECT * FROM `relation_ami` WHERE `user_one_id` = 1 AND `user_two_id` = 7");
         $query->bindValue(1, "%$search%", PDO::PARAM_STR);
         $query->execute();
 
@@ -65,7 +57,6 @@ $user_two = $_GET["user_two_id"];
                           <td style=\"border-style:solid;border-width:1px;border-color:#98bf21;background:#98bf21;\">Entrepries</td>
                           <td style=\"border-style:solid;border-width:1px;border-color:#98bf21;background:#98bf21;\">email</td></tr>"; 
 
-            
               while ($results = $query->fetch()) {
                 echo "<tr><td style=\"border-style:solid;border-width:1px;border-color:#98bf21;\">";      
                         echo $results['user_one_id'];
@@ -84,11 +75,16 @@ $user_two = $_GET["user_two_id"];
 
 
 
+
+
+
+
+
+
 ?>
 
-<?php include 'footer.php' ?>
+
+
 
 </body>
 </html>
-
-

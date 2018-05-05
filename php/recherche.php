@@ -90,26 +90,53 @@ $mon_chiffre = 0;
 // $sql="INSERT INTO `amis` (`pseudo_amis_recherche`, `photo_amis_recherche`, `email_amis_recherche`, `email_user`) 
 // VALUES ('".$pseudo_amis_recherche."','".$photo_amis_recherche."','".$email_amis_recherche."', '".$_SESSION["email"]."'";
 //  $conn-> exec($sql);
-
-       
-
-
- if (isset($_POST['submit'])){
-         
+   
       $user_send=$_SESSION["pseudo"];
       $user_receive=$pseudo_amis_recherche;
-     
+
+ if (isset($_POST['submit'])){
+      
+            $statut=0;
+
               
                  // echo "pseudo: ".$pseudo_amis_recherche;
                  // echo "email: ".$email_amis_recherche;  
+//friend request
 
   $sql = "INSERT INTO `relation_ami` (`user_one_id`, `user_two_id`, `status`, `action_user_id`)
-    VALUES ('$name_candid','$lastname_candid', '$mail_candid', '$tel_candid', '$poste_candid', '$message_candid', '$path')";
+    VALUES ('$user_send','$user_receive', '$status', '$action_user)";
     $conn-> exec($sql);
 
 
 
 }
+
+
+ if (isset($_POST['submit']) && isset($user_receive) ){
+
+
+       $statut=1;
+       $action_user=2;
+
+  $sql = "UPDATE `relation_ami` SET `status` = '$statut', `action_user_id` = '$action_user' WHERE `user_one_id` = 'user_send' AND `user_two_id` = 'user_receive'";
+    $conn-> exec($sql);
+
+
+}
+       
+            $statut=1;
+
+
+              $statement_check_friend = $conn -> prepare("SELECT * FROM `relation_ami` WHERE `user_one_id` = 'user_send' AND `user_two_id` = 'user_receive' AND `status` = '$status'");
+              $statement_check_friend -> EXECUTE();
+              $check_friend_request = $statement_check_friend -> fetchColumn(0);
+
+if (isset($check_friend_request)){
+  echo  "deja amii";
+}
+
+
+
 
 }
 
