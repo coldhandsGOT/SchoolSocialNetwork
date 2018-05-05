@@ -97,14 +97,12 @@
           $statement_status -> EXECUTE();
           $status = $statement_status -> fetchColumn();
 
-          $statement_id = $conn -> prepare("SELECT id FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
-          $statement_id -> EXECUTE();
-          $id = $statement_id -> fetchColumn();
+
 
 
 
           //enregistrer les données de l'Users dans la session.
-          $_SESSION["id"] = $id;
+          
           $_SESSION["email"] = $email;
           $_SESSION["mdp"] = $mdp;
           $_SESSION["pseudo"] = $pseudo;  

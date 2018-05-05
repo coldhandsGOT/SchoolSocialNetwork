@@ -57,7 +57,7 @@
   <?php include 'emploi_menu.php' ?>
 
 
-<?php echo $_SESSION["id"] ?>
+
 
 
          <center>

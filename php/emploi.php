@@ -9,8 +9,19 @@ session_start();
 <html>
   <meta charset = "utf-8" />
           <title> ECE Social Network </title>
-    
+      <link rel="stylesheet" type="text/css" href="../CSS/chronologie.css"/>
+      <link rel="stylesheet" href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+      <link href='../plugins/font-awesome/css/font-awesome.min.css' rel="stylesheet">
+      <link href='../plugins/pace-master/themes/white/pace-theme-flash.css' rel="stylesheet">
+      <link href='../plugins/bootstrap/css/bootstrap.min.css' rel="stylesheet">
+      <link href='../plugins/fancybox/dist/jquery.fancybox.min.css' rel="stylesheet">
+      <link href='../plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' rel="stylesheet">
+      <link href='../plugins/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css' rel="stylesheet">
+      <link href='../plugins/select2/dist/css/select2.min.css' rel="stylesheet">
+      <link href='../plugins/bootstrap/css/bootstrap-theme.min.css' rel="stylesheet">
       <link href='../CSS/emploi_menu.css' rel="stylesheet">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <?php include 'header.php' ?>
@@ -23,10 +34,14 @@ session_start();
 
 
 
+
+<?php if($_SESSION["status"]==1) { include 'emploi_add.php'; } else{ ?>
+   
+<div class="emplois">
 	<?php include 'allemploi.php' ?>
 
-
-
+</div>
+<?php } ?>
  
 
 
