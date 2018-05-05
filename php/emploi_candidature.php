@@ -111,19 +111,7 @@ if (empty($lastname_candid)) {
     VALUES ('$name_candid','$lastname_candid', '$mail_candid', '$tel_candid', '$poste_candid', '$message_candid', '$path')";
     $conn-> exec($sql);
   
-
-
-
- /*
- if (empty($lastname_candid)) {
-  $lastname_candid=$_SESSION["pseudo"];
-}else {
-  $sql = "UPDATE `Users` SET `pseudo`='$lastname_candid' WHERE `email`='".$_SESSION['email']."'";
-  $conn -> query($sql);
-  $_SESSION['pseudo']=$lastname_candid;
-}
-*/
-              
+  
 
 
     
