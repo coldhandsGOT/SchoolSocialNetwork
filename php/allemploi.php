@@ -56,7 +56,11 @@
 
   <?php include 'emploi_menu.php' ?>
 
-        <center>
+
+<?php echo $_SESSION["id"] ?>
+
+
+         <center>
              <h4>
                 <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
                      &#43; &nbsp; Déposez une candidature 

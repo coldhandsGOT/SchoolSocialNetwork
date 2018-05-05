@@ -104,7 +104,7 @@
 
 
           //enregistrer les données de l'Users dans la session.
-          $_SESSION["id"] = $status;
+          $_SESSION["id"] = $id;
           $_SESSION["email"] = $email;
           $_SESSION["mdp"] = $mdp;
           $_SESSION["pseudo"] = $pseudo;  
