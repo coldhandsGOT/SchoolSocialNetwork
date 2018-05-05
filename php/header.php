@@ -60,7 +60,7 @@
                           <!-- Right Side Of Navbar -->
                           <ul class="nav navbar-nav navbar-right">
                                  <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="chronologie.php">Home</a></li>
                                 <li><a href="amis.php">Messages</a></li>
                                 <li><a href="photos.php">Photos</a></li>
                                 
