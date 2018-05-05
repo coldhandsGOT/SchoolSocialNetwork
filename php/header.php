@@ -81,7 +81,7 @@
 
  
                                        <li>
-                                          <a href="modif_user.php">
+                                          <a href="settings.php">
                                               <i class="fa fa-cog"></i> Reglages
                                           </a>
                                        </li>

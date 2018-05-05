@@ -39,7 +39,7 @@ session_start();
 
 </div>
 
-
+<?php include 'emploi_menu.php' ?>
 
 <script src='../plugins/jquery/jquery-2.1.4.min.js'></script>
 <script src='../plugins/pace-master/pace.min.js'></script>
