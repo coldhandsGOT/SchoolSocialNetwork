@@ -42,7 +42,7 @@ session_start();
                               <br><br>
 
                           	<div class ="bouton">
-                                 <button class="button" name="submit" ><span>Poster</span></button>
+                                 <button class="button" name="submit" ><span>Upload photo</span></button>
                            </div>        	
                 </div>
     </fieldset>

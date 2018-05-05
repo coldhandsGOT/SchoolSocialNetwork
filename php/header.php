@@ -11,7 +11,6 @@
       <link href='../plugins/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css' rel="stylesheet">
       <link href='../plugins/select2/dist/css/select2.min.css' rel="stylesheet">
       <link href='../plugins/bootstrap/css/bootstrap-theme.min.css' rel="stylesheet">
-      <link href='css/around.css' rel="stylesheet">
 
 
 

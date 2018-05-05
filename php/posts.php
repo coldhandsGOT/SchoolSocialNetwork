@@ -26,7 +26,7 @@
                                         { 
                         ?>
                                              <p>
-                                                 <?php echo "L'utilisateur: ".$rowauteur["pseudo"]; ?>
+                                                 <?php echo $rowauteur["pseudo"]. " a publié un status";?>
                                              </p>
 
                                   <?php } ?>

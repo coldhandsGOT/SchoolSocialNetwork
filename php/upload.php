@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0;poster.php" />
+  <meta http-equiv="refresh" content="0;chronologie.php" />
 </head>
 </html>
 
