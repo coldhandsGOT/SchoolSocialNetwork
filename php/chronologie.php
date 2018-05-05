@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <?php
 // Start the session
 session_start();
@@ -9,9 +6,9 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<head>
+
 <?php include 'header.php' ?>
-</head>
+
 
 
 
