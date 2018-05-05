@@ -31,7 +31,7 @@
             </a>
         </li>
         <li  role="presentation">
-            <a href="photo.php">
+            <a href="photos.php">
                 <i class="fa fa-camera"></i>
                 Photo
             </a>
