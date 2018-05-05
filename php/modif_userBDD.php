@@ -23,6 +23,7 @@ $about_modif=$_POST["about_modif"];
 
 
 
+
 // backend upload photo :))))  2 heures de code non stop :(
 
    $photo_modif = $_FILES['photo_modif'];
@@ -97,5 +98,6 @@ if (empty($about_modif)) {
   $conn -> query($sql4);
   $_SESSION['about']=$about_modif;
 }
+
 
 ?>

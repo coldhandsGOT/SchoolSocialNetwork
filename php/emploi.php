@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
+
 
 <?php
 // Start the session
 session_start();
 ?>
 
-
+<!DOCTYPE html>
+<html>
   <meta charset = "utf-8" />
           <title> ECE Social Network </title>
       <link rel="stylesheet" type="text/css" href="../CSS/chronologie.css"/>
@@ -32,6 +32,8 @@ session_start();
 
 <body>
 <?php include 'side_menu.php' ?>
+
+<?php echo $_SESSION["status"] ?></p>
 
 <?php if($_SESSION["status"]==1) { include 'emploi_add.php'; } else{ ?>
    
