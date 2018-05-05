@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-       <!--   <meta http-equiv="refresh" content="0;emploi.php" />  -->
+        <meta http-equiv="refresh" content="0;emploi.php" />  
 
 </head>
 </html>
