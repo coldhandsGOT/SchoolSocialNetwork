@@ -23,10 +23,10 @@ session_start();
         <p class="text-center"><?php echo $_SESSION["pseudo"] ?></p>
       </div> 
 
-      <div class="panel-body">
-        <center>
-        <img src="../images/users/" width="250" height="250" style="border-radius: 4%;" alt="">
-        </center>
+       <div class="panel-body">
+             <center>
+                   <img src="<?php echo  $_SESSION['profile_pic']; ?>" width="250" height="250" style="border-radius: 4%;" alt="error">
+             </center>
         </div>
     </div>
     <div class="panel panel-default">

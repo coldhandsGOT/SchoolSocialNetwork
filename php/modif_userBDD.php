@@ -14,7 +14,7 @@ session_start();
 //on se connecte à la base de donnees
 require_once ('connexion_BDD.php');
 
-//$photo_modif=$_POST["photo_profil"];
+
 $pseudo_modif=$_POST["pseudo_modif"];
 $date_modif=$_POST["date_modif"];
 $location_modif=$_POST["location_modif"];
@@ -22,51 +22,33 @@ $phone_modif=$_POST["phone_modif"];
 $about_modif=$_POST["about_modif"];
 
 
+// backend upload photo :))))  2 heures de code non stop :(
 $photo_modif = $_FILES['photo_modif'];
 
 
-echo $pseudo_modif;
+$name = $photo_modif['name'];
 
+$folder = "../images/uploads/profile_pic/".$_SESSION["email"]."/";
+mkdir($folder, 0700);
 
-
-if (empty($photo_modif)) {
-    $photo_profil=$_SESSION["photo_profil"];
-  }
-  else{ 
-          $name_photo_modif = $photo_modif['name'];
-
-          $path = "../images/uploads/" . basename($name_photo_modif);
-
-            if (move_uploaded_file($photo_modif['tmp_name'], $path)) {
-               echo "profile photo updated";
-
-            } else {
-                echo "cant update photo ";
-            }
-        
-           $sql4 = "INSERT INTO users (profile_pic) VALUES ('" . mysqli_real_escape_string($path) . "')";
-            $conn -> query($sql4);
-          // $_SESSION['profile_pic']=$profile_pic;
-
-            //$sql = "INSERT INTO users SET `photo_profil` = '" . mysqli_real_escape_string($path) . "')";
-  
-    }
-
-
-
-
-
-/*
-
-
-if (empty($photo_modif)) {
-  $photo_modif=$_SESSION["photo_profil"];
-}else {
-  $sql = "UPDATE `Users` SET `photo_profil`='$photo_modif' WHERE `email`='".$_SESSION['email']."'";
-  $conn -> query($sql);
-  $_SESSION['photo_profil']=$photo_modif;
+if (empty($pseudo_modif)) {
+  $pseudo_modif=$_SESSION["pseudo"];
 }
-*/
+else{
+$path = $folder . basename($name);
+move_uploaded_file($photo_modif['tmp_name'], $path);
+
+$sql66 = "UPDATE `Users` SET `profile_pic`='$path' WHERE `email`='".$_SESSION['email']."'";
+  $conn -> query($sql66);
+
+ $_SESSION['profile_pic']=$path;
+
+}
+//
+
+
+
+
 
 
 if (empty($pseudo_modif)) {
