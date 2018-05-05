@@ -34,15 +34,12 @@ session_start();
 
 
 
-
-<?php if($_SESSION["status"]==1) { include 'emploi_add.php'; } else{ ?>
    
 <div class="emplois">
 	<?php include 'allemploi.php' ?>
 
 </div>
-<?php } ?>
- 
+
 
 
 

@@ -60,6 +60,8 @@
 
 
 
+<?php if($_SESSION["status"]==0)  { ?>
+
          <center>
              <h4>
                 <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
@@ -67,7 +69,17 @@
                 </button>
             </h4>
          </center>
+        <?php } else { ?>
 
+                            <center>
+                                 <h4>
+                                    <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
+                                         &#43; &nbsp; Déposer un emploi
+                                    </button>
+                                </h4>
+                             </center>
+
+         <?php } ?>
 
 
 
