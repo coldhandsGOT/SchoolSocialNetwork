@@ -43,51 +43,88 @@
 </div>
 
 
-     <section id="services" class="section section-padded">
-    <div class="container">
-      <div class="row text-center title">
-        <h2>Services</h2>
-        <h4 class="light muted">Achieve the best results with our wide variety of training options!</h4>
-      </div>
-      <div class="row services">
-        <div class="col-md-4">
-          <div class="service">
-            <div class="icon-holder">
-              <img src="img/icons/heart-blue.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Cardio Training</h4>
-            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service">
-            <div class="icon-holder">
-              <img src="img/icons/guru-blue.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Yoga Pilates</h4>
-            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service">
-            <div class="icon-holder">
-              <img src="img/icons/weight-blue.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Power Training</h4>
-            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <center><h4>
+    
+<button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
+                &#43; &nbsp; Déposez une candidature 
+            </button>
 
+</h4></center>
+
+
+<div class="modal fade"  id="open-application"role="dialog" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <center><h4 class="modal-title">Déposer une candidature </h4></center>
+            </div>
+            <div class="modal-body modal-body-spontaneous">
+                <form action="emploi_candidature.php" method="post" class="form-horizontal" role="form" >
+                    <div class="form-group">
+                        <label  for="name" class="col-sm-3 control-label">Prénom Nom* : </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Veuillez entrer vos prénom et nom."/>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="mail" class="col-sm-3 control-label">Email* : </label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="mail" name="mail" required data-validation-required-message="Veuillez entrer votre adresse email."/>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for ="tel" class="col-sm-3 control-label" data-validation-number-message="Veuillez entrer un numéro de téléphone valide.">Téléphone : </label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="tel" name="tel"/>
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                        <label  for="poste" class="col-sm-3 control-label">Poste* : </label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="poste" name="poste" rows="1" required data-validation-required-message="Veuillez entrer le poste souhaite."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for"cv" class="col-sm-3 control-label">CV* : </label>
+                        <div class="col-sm-9">
+                            <input type="file" id="cv" name="cv" required data-validation-required-message="Veuillez ajouter votre CV."/>
+                            <p class="help-block text-danger"></p>
+                            <p class="help-extension text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for ="message" class="col-sm-3 control-label">Message* : </label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="message" name="message" rows="6" required data-validation-required-message="Veuillez entrer un message."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    
+                    <center>
+                        <button type="button" id="fermer" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button type "submit" id="submit" name="submit" type="submit" class="btn btn-primary" >Soumettre</button>
+                    </center>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
 <script>
 var myIndex = 0;
@@ -124,3 +161,12 @@ function carousel() {
 
 </script>
 
+<script >
+$(".widget").click(function () {
+  var $flipper = $(this).find(".flipper");
+  $flipper.toggleClass("flipper-click");
+});
+
+
+
+</script>
