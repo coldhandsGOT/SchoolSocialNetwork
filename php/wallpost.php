@@ -36,10 +36,10 @@
 
 
                                           <div class="col-xs-4">
-                                              <button  class="btn btn-primary btn-submit pull-right" onclick="">
+                                              <button name="upPhoto" class="btn btn-primary btn-submit pull-right" onclick="">
                                                  Upload photo
                                               </button>
-                                              <button  class="btn btn-primary btn-submit pull-right" onclick="">
+                                              <button name="upStat" class="btn btn-primary btn-submit pull-right" onclick="">
                                                  post status
                                               </button>
                                         </div>

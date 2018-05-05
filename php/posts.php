@@ -36,12 +36,12 @@
                               Posté le : <?php echo date("Y-m-d h:i:sa" ) ?>
 
 
-                                <!-- Si l'user est un admin alors le bouton delete apparait pour supprimer les posts 
+                              
                                   <?php if($_SESSION['Admin']==1){ ?>
                                       <a class="delete" href="../php/delete_post.php?ID_poste=<?php echo $rowpost['ID_poste']; ?>" >
                                       <img id="bin_post" src="../images/bin.jpg" height="12" width="12"/></a>
                                   <?php } ?>
-                                  -->
+                               
 
                                   <br>
                                   <?php
