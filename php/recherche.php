@@ -6,9 +6,10 @@
   <title> recherche des amis </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-
+ <?php include 'header.php' ?>
+ 
 <body>
-  <?php include 'header.php' ?>
+ 
 
 
 

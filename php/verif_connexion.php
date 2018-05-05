@@ -93,9 +93,18 @@
 
 
 
+           $statement_status = $conn -> prepare("SELECT status FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_status -> EXECUTE();
+          $status = $statement_status -> fetchColumn();
+
+          $statement_id = $conn -> prepare("SELECT id FROM Users WHERE email ='".$email."' AND mdp = '".$mdp."'");
+          $statement_id -> EXECUTE();
+          $id = $statement_id -> fetchColumn();
+
 
 
           //enregistrer les données de l'Users dans la session.
+          $_SESSION["id"] = $status;
           $_SESSION["email"] = $email;
           $_SESSION["mdp"] = $mdp;
           $_SESSION["pseudo"] = $pseudo;  
@@ -108,7 +117,7 @@
           $_SESSION["phone"] = $phone;
           $_SESSION["location"] = $location;
           $_SESSION["about"] = $about;
-
+          $_SESSION["status"] = $status;
 
         } 
         else //si l'identification est echouée.

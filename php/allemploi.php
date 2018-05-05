@@ -1,3 +1,5 @@
+
+<div class="emplois">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 
@@ -54,16 +56,15 @@
 
   <?php include 'emploi_menu.php' ?>
 
-
-
-
-  <center><h4>
-    
+        <center>
+             <h4>
                 <button class= "btn btn-info" data-toggle="modal" data-target="#open-application">
                      &#43; &nbsp; Déposez une candidature 
                 </button>
+            </h4>
+         </center>
 
-</h4></center>
+
 
 
 <div class="modal fade"  id="open-application"role="dialog" tabindex="-1" aria-hidden="true">
@@ -160,47 +161,4 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
-
-
-<script >
-
-    // Popup Form Init
-    var i = 0;
-    var interval = 0.15;
-    $('.popup-form .dropdown-menu li').each(function() {
-      $(this).css('animation-delay', i + "s");
-      i += interval;
-    });
-    $('.popup-form .dropdown-menu li a').click(function(event) {
-      event.preventDefault();
-      $(this).parent().parent().prev('button').html($(this).html());
-    });
-
-
-</script>
-
-<script >
-$(".widget").click(function () {
-  var $flipper = $(this).find(".flipper");
-  $flipper.toggleClass("flipper-click");
-});
-
-
-
-</script>
+</div>
